@@ -16,7 +16,6 @@
 </template>
 
 <script>
-
   import data from './data'
   import methods from './methods'
 

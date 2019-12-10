@@ -1,66 +1,5 @@
 <template>
     <v-app style="background: #fdfdfd;">
-        <!-- <v-navigation-drawer 
-            app
-            class="logo-maker-body__drawer"
-            v-model="drawer"
-            width="25%"
-            height="100vh"
-            color="#fff"
-        >
-            <v-list>
-                <div >
-                    <v-list-item>
-                        <v-select
-                            full-width="100%"
-                            label="selct the logo"
-                            color="#333"
-                        >
-                    </v-select>
-                    </v-list-item>
-                    <v-list-item class="px-0">
-                        <v-spacer></v-spacer>
-                        <v-btn 
-                            @click="btnActive('btn1')" 
-                            :class="{'styling-button1': activeBtn === 'btn1'}"
-                            class="styling-button"
-                        >
-                            Select Font
-                        </v-btn>
-                    </v-list-item>
-                    <v-list-item class="px-0">
-                        <v-spacer></v-spacer>
-                        <v-btn 
-                            @click="btnActive('btn2')" 
-                            :class="{'styling-button1': activeBtn === 'btn2'}" 
-                            class="styling-button"
-                        >
-                            Select icon
-                        </v-btn>
-                    </v-list-item>
-                    <v-list-item class="px-0">
-                        <v-spacer></v-spacer>
-                        <v-btn 
-                            @click="btnActive('btn3')" 
-                            :class="{'styling-button1': activeBtn === 'btn3'}" 
-                            class="styling-button"
-                        >
-                            Customise
-                        </v-btn>
-                    </v-list-item>
-                    <v-list-item class="px-0">
-                        <v-spacer></v-spacer>
-                        <v-btn 
-                            @click="btnActive('btn4')" 
-                            :class="{'styling-button1': activeBtn === 'btn4'}" 
-                            class="styling-button"
-                        >
-                            ddjkjdlkd
-                        </v-btn>
-                    </v-list-item>
-                </div>
-            </v-list>
-        </v-navigation-drawer> -->
         <v-app-bar color="#fdfdfd" flat fixed class="pa-0" height="auto;">
             <v-container fluid class="pa-0"
         >
@@ -121,10 +60,10 @@
 </template>
 
 <script>
-import LogoText from './LogoText/LogoText';
-import LogoIcon from './LogoIcon/LogoIcon'
+import LogoText from './LogoText/index';
+import LogoIcon from './LogoIcon/index'
 export default {
-  name: 'HelloWorld',
+  name: 'BrandName',
   components: {
       LogoText,
       LogoIcon

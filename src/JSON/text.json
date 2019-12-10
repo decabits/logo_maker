@@ -1,0 +1,107 @@
+[
+    { 
+      "id" : 1,
+      "fontName" : "Fira",
+      "fontFamily" : "'Fira Sans', sans-serif"
+    },
+    {
+      "id" : 2,
+      "fontName" : "Noto Serif",
+       "fontFamily" : "'Noto Serif', serif"
+    },
+    {
+      "id" : 3,
+      "fontName" : "Roboto",
+      "fontFamily" : "'Roboto', sans-serif"
+    },
+    {
+       "id" : 4,
+       "fontName" : "Calistoga",
+       "fontFamily" : "Calistoga"
+    },
+    {
+      "id" : 5,
+      "fontName" : "Ibarra",
+      "fontFamily" : "'Ibarra Real Nova', serif"
+    },
+    {
+      "id" : 6,
+      "fontName" : "Alata1",
+      "fontFamily" : "'Alata', sans-serif"
+    },
+    {
+      "id" : 7,
+      "fontName" : "Lato1",
+      "fontFamily" : "'Lato', sans-serif"
+    },
+    { 
+      "id" : 8,
+      "fontName ": "Fira2",
+      "fontFamily" : "'Fira Sans', sans-serif"
+    },
+    {
+      "id" : 9,
+      "fontName": "Noto Serif3",
+      "fontFamily": "'Noto Serif', serif"
+    },
+    {
+      "id" : 10,
+      "fontName" : "Roboto4",
+      "fontFamily" : "'Roboto', sans-serif"
+    },
+    {
+      "id" : 11,
+      "fontName" : "Calistoga5",
+      "fontFamily" : "Calistoga"
+    },
+    {
+      "id" : 12,
+      "fontName" : "Ibarra6",
+      "fontFamily" : "'Ibarra Real Nova', serif"
+    },
+    {
+      "id" : 13,
+      "fontName" : "Alata7",
+      "fontFamily" : "'Alata', sans-serif"
+    },
+    {
+        "id " : 14,
+      "fontName " : "Lato8",
+      "fontFamily " : "'Lato', sans-serif"
+    },
+    { 
+        "id " : 15,
+      "fontName " : "Fira",
+      "fontFamily" : "'Fira Sans', sans-serif"
+    },
+    {
+      "id" : 16,
+      "fontName" : "Noto Serif10",
+      "fontFamily" : "'Noto Serif', serif"
+    },
+    {
+      "id" : 17,
+      "fontName" : "Roboto9",
+      "fontFamily" : "'Roboto', sans-serif"
+    },
+    {
+      "id" : 18,
+      "fontName" : "Calistoga11",
+      "fontFamily" : "Calistoga"
+    },
+    {
+      "id" : 19,
+      "fontName ": "Ibarra12",
+      "fontFamily" : "'Ibarra Real Nova', serif"
+    },
+    {
+      "id" : 20,
+      "fontName" : "Ala13",
+      "fontFamily ": "'Alata', sans-serif"
+    },
+    {
+      "id" : 21,
+      "fontName" : "Lato",
+      "fontFamily" : "'Lato', sans-serif"
+    }
+  ]

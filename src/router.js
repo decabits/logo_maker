@@ -1,15 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HelloWorld from './components/HelloWorld'
-import LogoMaker from './components/LogoMaker/LogoMaker'
-import BrandName from './components/LogoMaker/BrandName/BrandName'
+import Home from './components/Home/index'
+import LogoMaker from './components/LogoMaker/index'
+import BrandName from './components/LogoMaker/BrandName/index'
 
 Vue.use(VueRouter);
 
 const routes = [
-    { path: '/', component: HelloWorld },
-    { path: '/company-name', component: BrandName },
-    { path: '/logo-maker', component: LogoMaker }
+    { 
+        path: '/', 
+        component: Home
+    },
+    { 
+        path: '/company-name', 
+        component: BrandName 
+    },
+    { 
+        path: '/logo-maker', 
+        component: LogoMaker 
+    }
 ]
 
 export default new VueRouter({
