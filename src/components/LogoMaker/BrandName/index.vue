@@ -19,15 +19,10 @@
   import data from './data'
   import methods from './methods'
 
-  export default {
-    data,
-    methods 
-  };
+  export default { data, methods };
 
 </script>
 
 <style lang="scss" scoped>
-
   @import './brandName.css';
-
 </style>

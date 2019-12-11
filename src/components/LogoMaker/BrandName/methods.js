@@ -1,9 +1,8 @@
-import storage from "../../../service/storage";
+import storage from "../../../model/storage";
 const methods = {
     saveText() {
-        let brandName = this.logoText;
-        storage.saveBrandName(brandName);
+        storage.saveBrandName(this.logoText);
     }
 }
 
-export default methods
+export default methods;

@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import storage from '../../../service/storage'
+import storage from '../../../model/storage'
 import textJson from '../../../JSON/text.json'
 import cmsJson from '../../../JSON/cms.json'
 
@@ -61,8 +61,6 @@ export default {
         var font = this.fontItems[idIndex].fontaFamily;
         var fontId = this.fontItems[idIndex].id
         this.changeFont(font, fontId)
-        /* eslint-disable no-console */
-        console.log(idIndex)
       }
     }
 };

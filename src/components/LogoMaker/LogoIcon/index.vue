@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import storage from '../../../service/storage'
+import storage from '../../../model/storage'
 import iconJson from '../../../JSON/icon.json'
 import cmsJson from '../../../JSON/cms.json'
 

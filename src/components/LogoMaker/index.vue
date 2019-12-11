@@ -44,29 +44,31 @@
         </v-container>
         </v-app-bar>
         <transition name="fade"  >
-                <LogoText v-if="activeBtn === 'btn1'" />
+            <LogoText v-if="activeBtn === 'btn1'" />
         </transition>
 
         <transition name="fade" >
-                <LogoIcon v-if="activeBtn === 'btn2'" />
+            <LogoIcon v-if="activeBtn === 'btn2'" />
         </transition>
 
         <transition name="fade"  >
-                <div v-if="activeBtn === 'btn3'">
-                    <p>djjk</p>
-                </div>
+            <Customise v-if="activeBtn === 'btn3'" />
         </transition>
     </v-app>
 </template>
 
 <script>
-import LogoText from './LogoText/index';
+
+import LogoText from './LogoText/index'
 import LogoIcon from './LogoIcon/index'
+import Customise from './Customise/index'
+
 export default {
   name: 'BrandName',
   components: {
       LogoText,
-      LogoIcon
+      LogoIcon,
+      Customise
   },
   data: () => ({
       drawer: Boolean,
