@@ -35,12 +35,12 @@
 </template>
 
 <script>
-import storage from '../../../model/storage'
-import textJson from '../../../JSON/text.json'
-import cmsJson from '../../../JSON/cms.json'
+  import storage from '../../../model/storage'
+  import textJson from '../../../JSON/text.json'
+  import cmsJson from '../../../JSON/cms.json'
 
-export default {
-  name: 'HelloWorld',
+  export default {
+    name: 'HelloWorld',
     data: () => ({
       ...storage.getFontData(),
       width: '33%',
@@ -63,59 +63,10 @@ export default {
         this.changeFont(font, fontId)
       }
     }
-};
+  };
 </script>
+
 <style lang="scss" scoped>
+  @import '../../../style/selectFont.scss'
 
-    @import url('https://fonts.googleapis.com/css?family=Alata|Baskervville|Calistoga|Fira+Sans|Ibarra+Real+Nova|Lato|Montserrat|Noto+Serif|Open+Sans|Poppins|Roboto|Roboto+Condensed&display=swap');
-    %textPreview {
-      position: relative;
-      width: 100%;
-      height: 35vh;
-      text-align: center;
-    }
-
-    .logo-text{
-        &__preview-dark{
-          @extend %textPreview;
-          background: #333;
-          color: white;
-          border-radius: 8px 8px 0 0;
-        }
-        &__preview-light{
-          @extend %textPreview;
-          background: #fdfdfd;
-          text-align: center;
-          border: .5px solid #c4c4c4;
-          border-radius: 0 0 8px 8px;
-        }
-        &__preview-text{
-          position: relative;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 1;
-        }
-        &__font-selection-cards{
-          color: #333;
-          text-align: center;
-          height: 120px;
-          border-radius: 8px;
-          cursor: pointer;
-          border: .5px solid #c4c4c4c4;
-        }
-        &__font-selection-cards:hover{
-          color: white;
-          background: #333;
-          border: 0 solid #c4c4c4;
-          transition: .25s;
-        }
-        &__font-selection-cards-indicators{
-          width: 1%;
-          height: 119px;
-          background-image: linear-gradient(to bottom , #FF5F04, #FF9D42 );
-          position: absolute;
-          border-radius: 8px 0 0 8px;
-        }
-    }
 </style>

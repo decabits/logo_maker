@@ -16,13 +16,23 @@
 </template>
 
 <script>
-  import data from './data'
-  import methods from './methods'
+  import storage from '../../../model/storage'
 
-  export default { data, methods };
+  export default { 
+    data: () => ({
+      logoText : JSON.parse(window.localStorage.getItem('localStorage')|| "{}").brandName
+    }),
+    methods: {
+      saveText() {
+        storage.saveBrandName(this.logoText);
+      }
+    }
+
+  }
 
 </script>
 
 <style lang="scss" scoped>
-  @import './brandName.css';
+  @import '../../../style/form.scss'
+
 </style>

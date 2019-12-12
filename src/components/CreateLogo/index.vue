@@ -44,11 +44,11 @@
         </v-container>
         </v-app-bar>
         <transition name="fade"  >
-            <LogoText v-if="activeBtn === 'btn1'" />
+            <SelectFont v-if="activeBtn === 'btn1'" />
         </transition>
 
         <transition name="fade" >
-            <LogoIcon v-if="activeBtn === 'btn2'" />
+            <SelectIcon v-if="activeBtn === 'btn2'" />
         </transition>
 
         <transition name="fade"  >
@@ -58,58 +58,32 @@
 </template>
 
 <script>
+    import SelectFont from './SelectFont/index'
+    import SelectIcon from './SelectIcon/index'
+    import Customise from './Customise/index'
 
-import LogoText from './LogoText/index'
-import LogoIcon from './LogoIcon/index'
-import Customise from './Customise/index'
+    export default {
+        name: 'BrandName',
+        components: {
+            SelectFont,
+            SelectIcon,
+            Customise
+        },
+        data: () => ({
+            drawer: Boolean,
+            activeBtn: 'btn1',
+        }),
+        methods:{
+            btnActive(value){
+                this.activeBtn = value;
+            }
+        }
 
-export default {
-  name: 'BrandName',
-  components: {
-      LogoText,
-      LogoIcon,
-      Customise
-  },
-  data: () => ({
-      drawer: Boolean,
-      activeBtn: 'btn1',
-  }),
-  methods:{
-    btnActive(value){
-        this.activeBtn = value;
-    }
-  },
-  computed: {
-    
-  }
-};
+    };
+
 </script>
+
 <style lang="scss" scoped>
-    .styling-button{
-        background-color: #fdfdfd !important;
-        box-shadow: none;
-        width: 100%;
-        height: 64px !important;
-        margin-top: 8px;
-        color: #555;
-        border-radius: 0;
-        margin-top: 0;
-    }
-    .styling-button1{
-        width: 100% !important;
-        background-image: linear-gradient(to right, #1596DF, #0057FF );
-        height: 84px !important;
-        color: white;
-        transition: 1s;
-    }
-    .styling-button:hover{
-        color: #9CDBFF;
-    }
- 
-       .fade-enter-to, .fade-leave {
-  transition: 1s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
+    @import '../../style/createLogo.scss'
+    
 </style>

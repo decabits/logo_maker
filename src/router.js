@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from './components/Home/index'
-import LogoMaker from './components/LogoMaker/index'
-import BrandName from './components/LogoMaker/BrandName/index'
+import CreateLogo from './components/CreateLogo/index'
+import Form from './components/CreateLogo/Form/index'
 
 Vue.use(VueRouter);
 
@@ -13,11 +13,11 @@ const routes = [
     },
     { 
         path: '/company-name', 
-        component: BrandName 
+        component: Form 
     },
     { 
         path: '/logo-maker', 
-        component: LogoMaker 
+        component: CreateLogo 
     }
 ]
 
