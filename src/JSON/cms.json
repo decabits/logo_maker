@@ -1,0 +1,21 @@
+{
+    "selectFont": {
+        "previewComponent" : {
+            "label": "Select your font",
+            "previewContent" : "Your preview"
+        },
+        "fontCards" : {
+            "title" : "Click on the card to choose the for from your logo"
+        }
+    },
+    "selectIcon": {
+        "previewComponent" : {
+            "label": "Select your icon",
+            "previewContent" : "Your preview"
+        },
+        "iconCards" : {
+            "title" : "Click on the card to choose the font for your logo"
+        }
+    }
+
+}
