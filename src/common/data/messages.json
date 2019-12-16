@@ -5,7 +5,7 @@
             "previewContent" : "Your preview"
         },
         "fontCards" : {
-            "title" : "Click on the card to choose the for from your logo"
+            "title" : "Click on the card to choose the font for your logo"
         }
     },
     "selectIcon": {
@@ -14,7 +14,7 @@
             "previewContent" : "Your preview"
         },
         "iconCards" : {
-            "title" : "Click on the card to choose the font for your logo"
+            "title" : "Click on the card to choose the icon for your logo"
         }
     }
 
