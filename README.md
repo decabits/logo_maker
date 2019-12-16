@@ -1,23 +1,6 @@
-# logo-maker
+# Logo Maker
 
-This will help you to create your own logo in your own flambuoyancy.
-
-Things you will be able to do:-
-
-* Pick a font for your firm/Company's name.
-
-* Select logo-icon that suits your business.
-
-* Customise it in your own way:-
-
-    * Change and play with the colors for text and icon
-    * You can also use the gradient to give morit an aesthetic edge.
-    * Logomaker will also allow you to give custom position and size to your logo's text or icon.
-
-* Once done with the above steps, download your logo in high resolution for best quality in svg, png and jpg formats. 
-
-* Not just this, the logo will be default saved the app. Alter, edit, modify and reload over and over again!
-
+An open source project from [Decabits](https://decabits.com) Lab to create your own logo in your own flamboyancy.
 
 ## Project setup
 ```
@@ -44,10 +27,29 @@ yarn run test
 yarn run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Features -
+
+* Pick a font for your firm/company's name.
+
+* Select logo-icon that suits your business.
+
+* Customize it in your own way. You can :-
+
+    * Modify colors for text and icon.
+    * You can also use the gradient to give it an aesthetic edge.
+    * Provide custom position and size to your logo's text or icon.
+
+* You can download your logo in high resolution in `svg, png and jpg` formats. 
+
+* The logo will be saved in My Logos for future usage.
+
+## Demo -
+
+Pending
+
+## Contribution -
+
+Feel free to fork us at [Logo Maker](https://github.com/decabits/logo_maker) and open any relevant pull request/issue.
 
 ## License
 Decabits Software is a pack of hi-tech trappers all set to make an impact to your business with robust , customized websites we create. We recognize, adapt and give sole focus to your needs to craft a detailed and rich website and uniquely defined applications.
-
-[Decabits](https://decabits.com)
