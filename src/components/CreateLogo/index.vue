@@ -44,20 +44,21 @@
         </v-container>
         </v-app-bar>
         <transition name="fade"  >
-            <SelectFont v-if="activeBtn === 'btn1'" />
+            <SelectFont v-if="activeBtn === 'btn1'" :currentLogoObj="currentLogoObj"/>
         </transition>
 
         <transition name="fade" >
-            <SelectIcon v-if="activeBtn === 'btn2'" />
+            <SelectIcon v-if="activeBtn === 'btn2'" :currentLogoObj="currentLogoObj" />
         </transition>
 
         <transition name="fade"  >
-            <Customise v-if="activeBtn === 'btn3'" />
+            <Customise v-if="activeBtn === 'btn3'" :currentLogoObj="currentLogoObj" />
         </transition>
     </v-app>
 </template>
 
 <script>
+    import Logo from '../../models/logo'
     import SelectFont from './SelectFont/index'
     import SelectIcon from './SelectIcon/index'
     import Customise from './Customise/index'
@@ -72,6 +73,7 @@
         data: () => ({
             drawer: Boolean,
             activeBtn: 'btn1',
+            currentLogoObj: Logo.instance
         }),
         methods:{
             btnActive(value){
@@ -84,6 +86,6 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '../../style/createLogo.scss'
+    @import './createLogo.scss'
     
 </style>

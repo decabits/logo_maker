@@ -5,10 +5,18 @@
     user: [{ name: 'Sahil', email: 'sahil@decabits.com', company_name: 'Decabits']
   }
  */
-class Storage {
-  getAll = () => JSON.parse(window.localStorage.getItem(constant.localStorageRootKey) || "{}")
+import constant from '../common/constants.json'
 
-  setAll = data => localStorage.setItem(constant.localStorageRootKey, JSON.stringify(data));
+class Storage {
+  get = () => JSON.parse(window.localStorage.getItem(constant.currentStorageKey) || "{}")
+
+  set = data => localStorage.setItem(constant.currentStorageKey, JSON.stringify(data));
+
+  clear = () => window.localStorage.removeItem(constant.currentStorageKey)
+
+  setAll = data => localStorage.setItem(constant.localStorageRootKey, JSON.stringify(data))
+
+  getAll = () => JSON.parse(window.localStorage.getItem(constant.localStorageRootKey) || "[]")
 }
 
 export default Storage;

@@ -5,26 +5,24 @@
         <v-col md="4">
           <div style="position: fixed;" :style="{'width': width}">
             <v-select
-              v-model="logoIcon"
+              @change="selectIcon(currentLogoObj.iconId)"
+              v-model="currentLogoObj.iconId"
               :items="iconItems"
               item-text="imageName"
-              item-value="image"
+              item-value = "id"
               :label="cms.previewComponent.label"
             >
             </v-select>
-            <div class="logo-icon__preview-dark">
-              <img class="logo-icon__preview-icon"  :src="logoIcon" alt="">
-              </div>
-              <div class="logo-icon__preview-light">
-              <img class="logo-icon__preview-icon"  :src="logoIcon" alt="">
+            <div class="logo-icon__preview-light">
+              <img class="logo-icon__preview-icon"  :src="currentLogoObj.icon" alt="">
             </div>
           </div>
         </v-col>
         <v-col md="8">
-            <v-col md="3" v-for="(item, i) in iconItems" :key="i" style="float:left" >
+            <v-col md="3" v-for="(item, i) in iconItems" :key="i" style="float:left">
               <div  @click="changeIcon(item.image, item.id)" class="logo-icon__font-selection-cards">
-                <div :class="{'logo-icon__icon-selection-cards-indicators' : selectedIcon === item.id }"></div>
-                <img class="logo-icon__preview-icon"  :src="item.image" alt="">
+                <div :class="{'logo-icon__icon-selection-cards-indicators' : currentLogoObj.iconId === item.id }"></div>
+                <img :src="item.image" class="logo-icon__preview-icon" alt="">
               </div>
             </v-col>
         </v-col>
@@ -34,30 +32,46 @@
 </template>
 
 <script>
-  import storage from '../../../model/storage'
-  import iconJson from '../../../JSON/icon.json'
-  import cmsJson from '../../../JSON/cms.json'
+  import iconJson from '../../../common/data/icons.js'
+  import cmsJson from '../../../common/data/messages.json'
+  import Logo from '../../../models/logo'
 
   export default {
     name: 'HelloWorld',
     data: () => ({
-      ...storage.getIconData(),
       width: '33%',
       iconItems: iconJson,
-      cms: cmsJson.selectIcon
+      cms: cmsJson.selectIcon,
+      logoIcon: null,
     }),
-    methods: {
-      changeIcon(icon, iconId){
-        this.logoIcon = icon;
-        this.selectedIcon = iconId;
-        storage.saveIconData(icon, iconId);
+    components: {
+    },
+    props: {
+      currentLogoObj : {
+        type : Object
       }
     },
+    methods: {
+      changeIcon(icon, id){
+        const logo = Logo.instance;
+        logo.icon = icon;
+        logo.iconId = id;
+        logo.save();
+      },
+      selectIcon(id){
+        let array = this.iconItems
+        let slectedArray = array.filter((e) => e.id == id )
+        const icon = slectedArray[0].image;
+        this.changeIcon(icon, id)
+      }
+    },
+    mounted() {
+    }
   };
 
 </script>
 
 <style lang="scss" scoped>
-  @import '../../../style/selectIcon.scss'
+  @import './selectIcon.scss'
 
 </style>

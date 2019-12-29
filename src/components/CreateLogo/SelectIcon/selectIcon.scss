@@ -2,23 +2,17 @@
 %textPreview {
     position: relative;
     width: 100%;
-    height: 35vh;
+    height: 70vh;
     text-align: center;
 }
 
 .logo-icon{
-    &__preview-dark{
-        @extend %textPreview;
-        background: #333;
-        text-align: center;
-        border-radius: 8px 8px 0 0 ;
-    }
     &__preview-light{
         @extend %textPreview;
         background: #fdfdfd;
         text-align: center;
         border: .5px solid #c4c4c4;
-        border-radius: 0 0 8px 8px;
+        border-radius: 8px;
     }
     &__preview-icon{
         width: 25%;
@@ -35,8 +29,8 @@
         border: .5px solid #c4c4c4c4;
     }
     &__font-selection-cards:hover{
-        background: #333;
-        border: 0 solid #c4c4c4;
+        background: #e7e7e7;
+        border: .5px solid #c4c4c4;
         transition: .25s;
     }
     &__icon-selection-cards-indicators{
