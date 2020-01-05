@@ -20,7 +20,13 @@
         top: 50%;
         transform: translateY( -50%);
     }
-    &__font-selection-cards{
+    &__select-icon{
+        width: 25%;
+        position: relative;
+        top: 60px;
+        transform: translateY( -50%);
+    }
+    &__icon-selection-cards{
         color: #333;
         text-align: center;
         height: 120px;
@@ -28,7 +34,7 @@
         cursor: pointer;
         border: .5px solid #c4c4c4c4;
     }
-    &__font-selection-cards:hover{
+    &__icon-selection-cards:hover{
         background: #e7e7e7;
         border: .5px solid #c4c4c4;
         transition: .25s;

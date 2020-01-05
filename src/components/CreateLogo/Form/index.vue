@@ -5,6 +5,7 @@
         <v-text-field 
           v-model="logoText"
           @change="saveText"
+          :label="logoArray"
         >
         </v-text-field>
       <router-link to="/logo-maker">
@@ -32,7 +33,7 @@
 
   export default { 
     data: () => ({
-      logoText : '',
+      logoText : storage.get().name,
       logoArray: storage.getAll()
     }),
     methods: {

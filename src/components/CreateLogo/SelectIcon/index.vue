@@ -20,9 +20,9 @@
         </v-col>
         <v-col md="8">
             <v-col md="3" v-for="(item, i) in iconItems" :key="i" style="float:left">
-              <div  @click="changeIcon(item.image, item.id)" class="logo-icon__font-selection-cards">
+              <div  @click="changeIcon(item.image, item.id)" class="logo-icon__icon-selection-cards">
                 <div :class="{'logo-icon__icon-selection-cards-indicators' : currentLogoObj.iconId === item.id }"></div>
-                <img :src="item.image" class="logo-icon__preview-icon" alt="">
+                <img :src="item.image" class="logo-icon__select-icon" alt="">
               </div>
             </v-col>
         </v-col>

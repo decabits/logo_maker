@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Alata|Baskervville|Calistoga|Fira+Sans|Ibarra+Real+Nova|Lato|Montserrat|Noto+Serif|Open+Sans|Poppins|Roboto|Roboto+Condensed&display=swap");
+.logo-icon__preview-light {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  text-align: center;
+}
+
+.logo-icon__preview-light {
+  background: #fdfdfd;
+  text-align: center;
+  border: .5px solid #c4c4c4;
+  border-radius: 8px;
+}
+
+.logo-icon__preview-icon {
+  width: 25%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.logo-icon__select-icon {
+  width: 25%;
+  position: relative;
+  top: 60px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.logo-icon__icon-selection-cards {
+  color: #333;
+  text-align: center;
+  height: 120px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: .5px solid #c4c4c4c4;
+}
+
+.logo-icon__icon-selection-cards:hover {
+  background: #e7e7e7;
+  border: .5px solid #c4c4c4;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.logo-icon__icon-selection-cards-indicators {
+  width: 1%;
+  height: 119px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FF5F04), to(#FF9D42));
+  background-image: linear-gradient(to bottom, #FF5F04, #FF9D42);
+  position: absolute;
+  border-radius: 8px 0 0 8px;
+}
+/*# sourceMappingURL=selectIcon.css.map */

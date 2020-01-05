@@ -1,0 +1,201 @@
+@import "../scss/index.scss";
+@import "../scss/color.scss";
+@import "../scss/variable.scss";
+
+*{
+  padding: 0;
+  margin: 0;
+}
+.headings{
+  margin-bottom: 4%;
+}
+
+.container-fluid {
+  font-family: "Montserrat", sans-serif;
+  padding: 2% 0 0 0 !important;
+  &__navbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    &__image {
+      img {
+        height: $spacer * 15;
+      }
+    }
+    &__header {
+      &__right {
+        list-style: none;
+        display: flex;
+        width: 600px;
+        li a {
+          color: $nav-link;
+          text-decoration: none;
+          font-weight: 400;
+          padding: 15px 20px;
+        }
+        li a:hover {
+          color: white;
+          background-color: $purple;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+  &__bg{
+    background-image: url('../images/logo_maker_bg.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+  &__landing-page {
+    padding: 12% 6% 12% 6% !important;
+    &__head {
+      h1 {
+        color: $heading;
+        font-size: $spacer * 7;
+      }
+    }
+    &__title {
+      padding: 2% 0 8% 0;
+      h3 {
+        color: $title;
+        font-size: $spacer * 4;
+      }
+    }
+    &__button {
+      img{
+        transform: translate(6px , -10px);
+        z-index: 10;
+        width: 10%;
+        height: auto;
+        position: relative;
+        float: left;
+      }
+      &__btn {
+        position: relative;
+        float: left;
+        width: 90%;
+        height: $spacer * 14;
+        border-radius: $spacer * 8;
+        color: white;
+        background-color: $purple;
+        font-size: $spacer * 4;
+        &__icon {
+          margin-left: $spacer * 7;
+        }
+      }
+    }
+  }
+  &__logo-creation {
+    padding: 5% 0 5% 0;
+    margin-bottom: 10%;
+    background-image: url('../images/logo_creation_bg.png');
+    object-fit: cover;
+    box-shadow: 0 0 16px #fafafa;
+    &__blocks{
+      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0);
+      box-shadow: 0 0 16px #fafafa;
+      border: .5px solid #fafafa;
+      padding: 2% 0 ;
+      &__block{
+        padding: 12px;
+      }
+      &__block img{
+        width: 84px;
+        padding: 0 0 12px 0;
+      }
+      &__block h3{
+        color: #FF2E86;
+      }
+      &__block p {
+        padding-top: 12px;
+        color: #484BB4;
+      }
+    }
+  }
+  &__templates {
+    padding: 1% 4% 8% 4%;
+    &__layouts {
+      &__block {
+        padding: 12px;
+        height: 300px;
+        &__image {
+          border: 1px solid #c4c4c4;
+          border-radius: 12px;
+          width: 100%;
+          height: 100%;
+          img {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+  &__footer {
+    &__section {
+      display: flex;
+      margin-left: 40px;
+      margin-right: 40px;
+      padding-left: 20px;
+      padding-right: 20px;
+      &__block-left {
+        padding-left: 10px;
+        padding-right: 10px;
+        img {
+          height: 60px;
+        }
+      }
+      &__block-middle {
+        padding-left: 10px;
+        padding-right: 10px;
+        &__feature {
+          display: flex;
+          &__list {
+            padding-left: 10px;
+            padding-right: 10px;
+            h3 {
+              color: $heading;
+            }
+            &__links {
+              list-style: none;
+              padding: 0;
+              li {
+                padding: $spacer;
+              }
+              li a {
+                text-decoration: none;
+                color: $title;
+              }
+            }
+          }
+
+          &__work-list {
+            padding-left: 10px;
+            padding-right: 10px;
+            h3 {
+              color: $heading;
+            }
+            &__work-links {
+              list-style: none;
+              padding: 0;
+              li {
+                padding: $spacer;
+              }
+              li a {
+                text-decoration: none;
+                color: $title;
+              }
+            }
+          }
+        }
+      }
+      &__block-right {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
