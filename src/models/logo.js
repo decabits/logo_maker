@@ -2,7 +2,7 @@ import Storage from '../services/storage';
 
 class Logo {
 
-  constructor({id = 1, name = '', font = '' , fontId = 1, icon = '', iconId = 1,  pngUrl = '', svgUrl = '', current = true, textColor = '#000000', bgColor = '#000000', iconColor = '#000000', canvasWidth = Number , textScaleX = Number , textScaleY = Number , createdAt = new Date().getTime(), updatedAt = new Date().getTime()}) {
+  constructor({id = 1, name = '', font = '' , fontId = 1, icon = '', iconId = 1,  pngUrl = '', svgUrl = '', current = true, textColor = '#000000', bgColor = '#000000', iconColor = '#000000', canvasWidth = Number , textScaleX = Number , textScaleY = Number , fontSize = 24 ,createdAt = new Date().getTime(), updatedAt = new Date().getTime()}) {
     this.name = name;
     this.textColor = textColor;
     this.bgColor = bgColor;
@@ -19,6 +19,7 @@ class Logo {
     this.iconScaleX = .35;
     this.iconScaleY = .35;
     this.iconId = iconId;
+    this.fontSize = fontSize;
     this.canvasWidth =canvasWidth;
     this.textLeft = this.canvasWidth/2;
     this.textTop = this.canvasWidth/2;
@@ -47,8 +48,8 @@ class Logo {
   }
 
   serialize = () => {
-    const {name, font, description, url, fontId, createdAt, id, icon, iconId, current, iconColor, textColor, bgColor, iconScale, canvasWidth, iconLeft, iconTop, textLeft, textTop, textScaleX, textScaleY, iconScaleX, iconScaleY, updatedAt} = this;
-    return {name,font,  description, url, fontId, createdAt, id, icon, iconId, current, iconColor, textColor, bgColor , iconScale, canvasWidth, iconLeft, iconTop, textLeft, textTop , textScaleX, textScaleY, iconScaleX, iconScaleY, updatedAt}
+    const {name, font, description, url, fontId, createdAt, id, icon, iconId, current, iconColor, textColor, bgColor, iconScale, fontSize, canvasWidth, iconLeft, iconTop, textLeft, textTop, textScaleX, textScaleY, iconScaleX, iconScaleY, updatedAt} = this;
+    return {name,font,  description, url, fontId, createdAt, id, icon, iconId, current, iconColor, textColor, bgColor , iconScale, fontSize, canvasWidth, iconLeft, iconTop, textLeft, textTop , textScaleX, textScaleY, iconScaleX, iconScaleY, updatedAt}
   }
 
 }

@@ -76,13 +76,14 @@
                             <v-card  flat class="mt-4 logo-customise__select-color-container-card">
                                 <v-col md="12">
                                     <v-row class="px-4 mb-2">
-                                        <h2>Selcet Font Size</h2>
+                                        <h2>Change the icon scale</h2>
                                     </v-row>
                                     <v-row class="px-4">
                                         <v-col md="10" class="py-5">
                                             <v-slider
                                                 v-model="iconScale"
                                                 :value="currentLogoObj.iconScaleX"
+                                                :label="currentLogoObj.iconScaleX"
                                                 @change="changeIconScale(currentLogoObj.iconScaleX)"
                                                 max="40"
                                                 min="0"
@@ -94,9 +95,27 @@
                                     </v-row>
                                 </v-col>
                             </v-card>
+                            <v-card  flat class="mt-4 logo-customise__select-color-container-card">
+                                <v-col md="12">
+                                    <v-row class="px-4 mb-2">
+                                        <v-col md="12" class="pa-0">
+                                            <h2>Change font size</h2>
+                                        </v-col>
+                                        <v-col md="1" class="pa-0">
+                                            <v-text-field
+                                                :value="currentLogoObj.fontSize" 
+                                                :label="currentLogoObj.fontSize" 
+                                                v-model="fontSize" 
+                                                @change="changeFontSize(currentLogoObj.fontSize)"
+                                            >
+                                            </v-text-field>
+                                        </v-col>
+                                    </v-row>
+                                </v-col>
+                            </v-card>
                         </v-row>
                     </v-col>
-                    <v-col md="6" class="px-0">
+                    <v-col md="6" class="px-1">
                         <v-col md="12" ref="canvas" class="pa-0">
                             <canvas id="c" :width="canvasWidth" style="border:1px solid #000000;"></canvas>
                         </v-col>
@@ -228,6 +247,7 @@
             iconScale: Number,
             iconScaleX: 0.5,
             iconScaleY: 0.5,
+            fontSize: ''
         }),
         props: {
             currentLogoObj : {
@@ -320,6 +340,16 @@
                 })
                 __svg.setCoords();
                 __canvas.renderAll()
+            },
+            changeFontSize(){
+                const logo = Logo.instance;
+                logo.fontSize = this.fontSize;
+                logo.save();
+                __text.set({
+                    fontSize : this.currentLogoObj.fontSize
+                })
+                __text.setCoords()
+                __canvas.renderAll();
             },
             downloadSvg() {
                 let canvasToSvg = __canvas.toSVG();
@@ -433,7 +463,7 @@
             });
             __text = new fabric.Text(this.currentLogoObj.name, {
                 textAlign: 'center',
-                fontSize: 56,
+                fontSize: this.currentLogoObj.fontSize,
                 fontFamily: this.currentLogoObj.font,
                 fill : this.currentLogoObj.textColor
             });
