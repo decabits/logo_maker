@@ -2,7 +2,7 @@ import Storage from '../services/storage';
 
 class Logo {
 
-  constructor({id = 1, name = '', font = '' , fontId = 1, icon = '', iconId = 1, transparentPngUrl='',  pngUrl = '', svgUrl = '', current = true, textColor = '#fff', bgColor = '#000000', iconColor = '#fff', canvasWidth = Number , svgEl = '', textScaleX = Number , textScaleY = Number , iconScaleX = .35, iconScaleY = .35, fontSize = 24 ,createdAt = new Date().getTime(), updatedAt = new Date().getTime()}) {
+  constructor({id = 1, name = '', font = '' , fontId = 1, icon = '', iconId = 1, iconLeft = null, iconTop = null, textLeft= null, textTop = null,  transparentPngUrl='',  pngUrl = '', svgUrl = '', current = true, textColor = '#fff', bgColor = '#000000', iconColor = '#fff', canvasWidth = Number , svgEl = '', textScaleX = Number , textScaleY = Number , iconScaleX = .35, iconScaleY = .35, fontSize = 24 ,createdAt = new Date().getTime(), updatedAt = new Date().getTime()}) {
     this.name = name;
     this.textColor = textColor;
     this.bgColor = bgColor;
@@ -15,6 +15,10 @@ class Logo {
     this.svgEl = svgEl;
     this.fontId = fontId;
     this.icon = icon;
+    this.iconLeft = iconLeft;
+    this.iconTop = iconTop;
+    this.textLeft = textLeft;
+    this.textTop = textTop;
     this.textScaleX = textScaleX;
     this.textScaleY = textScaleY;
     this.iconScaleX = iconScaleX;

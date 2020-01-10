@@ -16,6 +16,11 @@
         "iconCards" : {
             "title" : "Click on the card to choose the icon for your logo"
         }
+    },
+    "customise": {
+        
+    },
+    "download": {
+        "title" : "Download Your logo in svg, png and jpg format"
     }
-
 }

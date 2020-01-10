@@ -221,6 +221,7 @@
 <script>
     import { fabric } from 'fabric'
     import Logo from '../../../models/logo'
+    import Storage from '../../../services/storage'
 
     let __canvas = null;
     let __svg = null;
@@ -268,7 +269,7 @@
                 logo.saveObject();
                 Logo.instance = new Logo({});
                 this.save();
-                this.$router.push({path:'/'})
+                this.$router.push({path:'/form'})
             },
             selectedTextColor() {
                 this.showTextColorPalet = true
@@ -374,6 +375,7 @@
             },
             save() {
                 this.processing = true
+                const storage = new Storage();
                 let canvasToSvg = __canvas.toSVG();
                 const svgURL =  "data:image/svg+xml," + encodeURIComponent(canvasToSvg);
                 __bg.set({
@@ -391,6 +393,9 @@
                 logo.svgEl = canvasToSvg
                 logo.save();
                 __canvas.renderAll()
+                const logoArray = storage.getAll()
+                logoArray[this.currentLogoObj.id - 1] = this.currentLogoObj;
+                storage.setAll(logoArray);
                 this.processing = false;
             },
             position(active){
@@ -525,6 +530,7 @@
                 __canvas.renderAll()
                 
             })
+            this.save()
         },
         watch : {
             textColor(){

@@ -40,8 +40,10 @@
                         Download
                     </v-btn>
                 </v-col>
-                <v-col md="1" class="pa-0">
-                    <v-icon>@mdi-home</v-icon>
+                <v-col md="1" class="py-4">
+                    <router-link to="/">
+                        <v-btn>projects</v-btn>
+                    </router-link>
                 </v-col>
             </v-row>
         </v-container>

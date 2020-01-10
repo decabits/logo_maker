@@ -2,7 +2,7 @@
   <v-container class="download">
     <v-row class="mt-12 pt-12 download__container">
         <v-col class="col-12 col-md-12 col-sm-12 mt-12">
-            <h2 class="download__container__head">Download Your logo in svg, png and jpg formate</h2>
+            <h2 class="download__container__head">{{content.download.title}}</h2>
             <v-divider
                 class="pa-0 mt-4"
                 horizontal
@@ -35,9 +35,11 @@
 
 <script>
 
-  export default { 
+    import cms from '../../../common/data/messages.json'
+
+    export default { 
     data: () => ({
-    
+        content : cms
     }),
     props: {
         currentLogoObj: {
@@ -65,7 +67,7 @@
         }
     }
 
-  }
+    }
 
 </script>
 

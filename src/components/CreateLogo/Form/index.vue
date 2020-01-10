@@ -10,18 +10,6 @@
         </v-text-field>
         <v-btn @click="addNewLogo">Next</v-btn>
       </v-col>
-      <v-col class="form__cards-container col-12" md="4" v-for="(item, i) in logoArray" :key="i">
-        <v-card flat outlined class="form__cards-container__card" @click="updateLogo(i)">
-          <v-list-item>
-            <v-list-item-avatar class="form__cards-container__card-serial">{{item.id}}</v-list-item-avatar>
-          </v-list-item>
-          <v-list-item class="pa-0">
-            <div class="form__cards-container__card__preview pa-0 ma-0" :style="{'background-color' : item.bgColor}">
-              <img :src="item.pngUrl" alt="">
-            </div>
-          </v-list-item>
-        </v-card>
-      </v-col>
     </v-row>
   </v-container>
 </template>
