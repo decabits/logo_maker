@@ -31,7 +31,7 @@
                         Customise
                     </v-btn>
                 </v-col>
-                 <v-col md="3" class="pa-0">
+                <v-col md="2" class="pa-0">
                     <v-btn 
                         @click="btnActive('btn4')" 
                         :class="{'styling-button1': activeBtn === 'btn4'}" 
@@ -39,6 +39,9 @@
                     >
                         Download
                     </v-btn>
+                </v-col>
+                <v-col md="1" class="pa-0">
+                    <v-icon>@mdi-home</v-icon>
                 </v-col>
             </v-row>
         </v-container>
@@ -54,6 +57,9 @@
         <transition name="fade"  >
             <Customise v-if="activeBtn === 'btn3'" :currentLogoObj="currentLogoObj" />
         </transition>
+        <transition name="fade"  >
+            <Download v-if="activeBtn === 'btn4'" :currentLogoObj="currentLogoObj" />
+        </transition>
     </v-app>
 </template>
 
@@ -62,13 +68,15 @@
     import SelectFont from './SelectFont/index'
     import SelectIcon from './SelectIcon/index'
     import Customise from './Customise/index'
+    import Download from './Download/index'
 
     export default {
         name: 'BrandName',
         components: {
             SelectFont,
             SelectIcon,
-            Customise
+            Customise,
+            Download
         },
         data: () => ({
             drawer: Boolean,

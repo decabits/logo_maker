@@ -1,24 +1,25 @@
 <template>
   <v-container>
-    <v-row >
-      <v-col md="10">
+    <v-row class="form">
+      <v-col md="12">
         <v-text-field 
           v-model="logoText"
           @change="saveText"
-          :label="logoArray"
+          :label="logoArray.name"
         >
         </v-text-field>
-      <router-link to="/logo-maker">
-          <v-btn >Next</v-btn>
-      </router-link>
+        <v-btn @click="addNewLogo">Next</v-btn>
       </v-col>
-      <v-col md="3" v-for="(item, i) in logoArray" :key="i">
-        <v-card
-          class="mx-auto"
-        >
-          <v-card-title @click="updateLogo(i)">
-            {{item.id}}
-          </v-card-title>
+      <v-col class="form__cards-container col-12" md="4" v-for="(item, i) in logoArray" :key="i">
+        <v-card flat outlined class="form__cards-container__card" @click="updateLogo(i)">
+          <v-list-item>
+            <v-list-item-avatar class="form__cards-container__card-serial">{{item.id}}</v-list-item-avatar>
+          </v-list-item>
+          <v-list-item class="pa-0">
+            <div class="form__cards-container__card__preview pa-0 ma-0" :style="{'background-color' : item.bgColor}">
+              <img :src="item.pngUrl" alt="">
+            </div>
+          </v-list-item>
         </v-card>
       </v-col>
     </v-row>
@@ -37,6 +38,12 @@
       logoArray: storage.getAll()
     }),
     methods: {
+      addNewLogo(){
+        const logo =  Logo.instance
+        logo.id = this.logoArray.length + 1 || 1;
+        logo.save();
+        this.$router.push({path:'/logo-maker'})
+      },
       saveText() {
         const logo = Logo.instance;
         logo.name = this.logoText;
@@ -49,11 +56,10 @@
         this.$router.push({path:'/logo-maker'})
       }
     }
-
   }
 
 </script>
 
 <style lang="scss" scoped>
-
+    @import './form.scss'
 </style>

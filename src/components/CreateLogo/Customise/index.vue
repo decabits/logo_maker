@@ -3,6 +3,11 @@
         <div>
             <v-container fluid class="pt-12 mt-12 logo-customise">
                 <v-row>
+                    <div v-if="processing" class="logo-customise__loader">
+                        <div class="logo-customise__loader__container">
+                            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                        </div>
+                    </div>
                     <v-col md="4" class="px-2">
                         <v-color-picker 
                             style="position: absolute; z-index: 9;"
@@ -42,32 +47,32 @@
                                         <h2>Select color</h2>
                                     </v-row>
                                     <v-row class="px-4 mb-2">
-                                        <v-col md="1" class="pa-0">
+                                        <v-col md="1" class="pa-0 col-1">
                                             <div class="logo-customise__select-text-color" :style="{background: currentLogoObj.textColor}" @click="selectedTextColor"></div>
                                         </v-col>
-                                        <v-col md="11" class="pa-1 logo-customise__select-color-container">
-                                            <h4>Click to change the color of text color</h4>
+                                        <v-col md="11" class="pa-1 logo-customise__select-color-container col-11">
+                                            <h4>Click to change text color</h4>
                                         </v-col>
                                     </v-row>
                                     <v-row class="px-4 mb-2">
-                                        <v-col md="12" class="pa-0 ma-0">
+                                        <v-col md="12" class="pa-0 ma-0 col-12">
                                             <v-radio-group v-model="bgStatus" row>
                                                 <v-radio label="Transparent" color="red" @change="bgTransparent"></v-radio>
                                                 <v-radio label="Fill" color="red" @change="bgFill"></v-radio>
                                             </v-radio-group>
                                         </v-col>
-                                        <v-col md="1" class="pa-0" v-if="bgStatus === 1">
+                                        <v-col md="1" class="pa-0 col-1" v-if="bgStatus === 1">
                                             <div class="logo-customise__select-bg-color" :style="{background: currentLogoObj.bgColor}" @click="selectedBgColor"></div>
                                         </v-col>
-                                        <v-col md="11" class="pa-1 logo-customise__select-color-container" v-if="bgStatus === 1">
-                                            <h4>Click to change the color of background color</h4>
+                                        <v-col md="11" class="pa-1 logo-customise__select-color-container col-11" v-if="bgStatus === 1">
+                                            <h4>Click to change background color</h4>
                                         </v-col>
                                     </v-row>
                                     <v-row class="px-4">
-                                        <v-col md="1" class="pa-0">
+                                        <v-col md="1" class="pa-0 col-1">
                                             <div class="logo-customise__select-icon-color" :style="{background: currentLogoObj.iconColor}" @click="selectedIconColor"></div>
                                         </v-col>
-                                        <v-col md="11" class="pa-1 logo-customise__select-color-container">
+                                        <v-col md="11" class="pa-1 logo-customise__select-color-container col-11">
                                             <h4>Click to change the color of icon color</h4>
                                         </v-col>
                                     </v-row>
@@ -79,18 +84,15 @@
                                         <h2>Change the icon scale</h2>
                                     </v-row>
                                     <v-row class="px-4">
-                                        <v-col md="10" class="py-5">
+                                        <v-col md="12" class="py-5">
                                             <v-slider
                                                 v-model="iconScale"
                                                 :value="currentLogoObj.iconScaleX"
-                                                :label="currentLogoObj.iconScaleX"
+                                                :label="currentLogoObj.iconScaleX + 1"
                                                 @change="changeIconScale(currentLogoObj.iconScaleX)"
                                                 max="40"
-                                                min="0"
+                                                min="1"
                                             ></v-slider>
-                                        </v-col>
-                                        <v-col md="1" class="px-2">
-                                            <v-avatar color="primary"><span class="white--text ">{{(0.5 + this.currentLogoObj.iconScaleX).toFixed(1)}}</span></v-avatar>
                                         </v-col>
                                     </v-row>
                                 </v-col>
@@ -115,10 +117,18 @@
                             </v-card>
                         </v-row>
                     </v-col>
-                    <v-col md="6" class="px-1">
-                        <v-col md="12" ref="canvas" class="pa-0">
-                            <canvas id="c" :width="canvasWidth" style="border:1px solid #000000;"></canvas>
-                        </v-col>
+                    <v-col md="6">
+                        <v-row class="px-1">
+                            <v-col md="12" ref="canvas" class="pa-0 logo-customise__canvas">
+                                <canvas id="c" :width="canvasWidth"></canvas>
+                            </v-col>
+                            <v-col md="8" class="col-8 py-2 pa-0 pr-1">
+                                <v-btn @click="save" class="logo-customise__button-save">Save</v-btn>
+                            </v-col>
+                            <v-col md="4" class="col-4 py-2 pa-0 pl-1">
+                                <v-btn class="logo-customise__button-new-logo" @click="saveLogoObject">New Logo</v-btn>
+                            </v-col>
+                        </v-row>
                     </v-col>
                     <v-col md="2" class="px-1">
                         <v-row class="px-2">
@@ -204,8 +214,6 @@
                 </v-row>
             </v-container>
         </div>
-        <v-btn class="save-logo" @click="saveLogoObject">Save Logo</v-btn>
-        <v-btn @click="downloadSvg">Download</v-btn>
         <a  ref="a"></a>
     </div>
 </template>
@@ -224,7 +232,7 @@
         components: {
         },
         data: () => ({
-            direct: false,
+            processing: false,
             canvasWidth: Number,
             iconWidth: Number,
             mode: 'hexa',
@@ -257,49 +265,57 @@
         methods:{
             saveLogoObject() {
                 const logo = Logo.instance
-                logo.saveObject()
-                this.direct = true
-                this.$router.push({path:'/company-name'})
+                logo.saveObject();
+                Logo.instance = new Logo({});
+                this.save();
+                this.$router.push({path:'/'})
             },
             selectedTextColor() {
                 this.showTextColorPalet = true
                 this.textColor = this.currentLogoObj.textColor
+                this.save();
             },
             selectedBgColor() {
                 this.showBgColorPalet = true
-                this.bgColor = this.currentLogoObj.bgColor  
+                this.bgColor = this.currentLogoObj.bgColor;
+                this.save();
             },
             selectedIconColor() {
                 this.showIconColorPalet = true
-                this.iconColor = this.currentLogoObj.iconColor
+                this.iconColor = this.currentLogoObj.iconColor;
+                this.save();
             },
             saveTextColor(color) {
                 const logo = Logo.instance;
                 logo.textColor = color;
                 logo.save();
+                this.save();
             },
             bgTransparent() {
                 __bg.set({
                     backgroundColor: 'transparent'
                 })
-                __canvas.renderAll()
+                __canvas.renderAll();
+                this.save();
             },
             bgFill() {
                 __bg.set({
                     backgroundColor: this.currentLogoObj.bgColor
                 })
-                __canvas.renderAll()
+                __canvas.renderAll();
+                this.save();
             },
             changeIconScale(){
                 const logo = Logo.instance;
-                logo.iconScaleX = 1/2 + this.iconScale/10;
-                logo.iconScaleY = 1/2 +  this.iconScale/10;
+                logo.iconScaleX = this.iconScale/10;
+                logo.iconScaleY = this.iconScale/10;
                 __svg.set({
                     scaleX : this.currentLogoObj.iconScaleX,
                     scaleY : this.currentLogoObj.iconScaleY
                 });
                 __svg.setCoords();
                 __canvas.renderAll();
+                this.save();
             },
             changeTextLeft(){
                 const logo = Logo.instance;
@@ -309,7 +325,8 @@
                     left: this.currentLogoObj.textLeft
                 })
                 __text.setCoords();
-                __canvas.renderAll()
+                __canvas.renderAll();
+                this.save();
             },
             changeTextTop(){
                 const logo = Logo.instance;
@@ -319,7 +336,8 @@
                     top: this.currentLogoObj.textTop
                 })
                 __text.setCoords();
-                __canvas.renderAll()
+                __canvas.renderAll();
+                this.save();
             },
             changeIconLeft(){
                 const logo = Logo.instance;
@@ -329,7 +347,8 @@
                     left: this.currentLogoObj.iconLeft
                 })
                 __svg.setCoords();
-                __canvas.renderAll()
+                __canvas.renderAll();
+                this.save();
             },
             changeIconTop(){
                 const logo = Logo.instance;
@@ -339,7 +358,8 @@
                     top: this.currentLogoObj.iconTop
                 })
                 __svg.setCoords();
-                __canvas.renderAll()
+                __canvas.renderAll();
+                this.save();
             },
             changeFontSize(){
                 const logo = Logo.instance;
@@ -350,19 +370,28 @@
                 })
                 __text.setCoords()
                 __canvas.renderAll();
+                this.save();
             },
-            downloadSvg() {
+            save() {
+                this.processing = true
                 let canvasToSvg = __canvas.toSVG();
                 const svgURL =  "data:image/svg+xml," + encodeURIComponent(canvasToSvg);
-                const pngURL = __canvas.toDaataURL('image/png');
+                __bg.set({
+                    backgroundColor: 'transparent'
+                })
+                const transparentPngUrl = __canvas.toDataURL('image/png');
                 const logo =  Logo.instance;
-                logo.pngUrl = pngURL;
+                logo.transparentPngUrl = transparentPngUrl;
                 logo.svgUrl = svgURL;
+                __bg.set({
+                    backgroundColor: this.currentLogoObj.bgColor
+                })
+                const pngURL = __canvas.toDataURL('image/png');
+                logo.pngUrl =  pngURL
+                logo.svgEl = canvasToSvg
                 logo.save();
-                const a = this.$refs.a
-                a.download = `${this.currentLogoObj.name}byDecabits.svg`
-                a.href = svgURL
-                a.click()
+                __canvas.renderAll()
+                this.processing = false;
             },
             position(active){
                 // tc = top center
@@ -426,22 +455,24 @@
                 })
                 __svg.setCoords();
                 __canvas.renderAll()
+                this.save();
             }
         },
         mounted() {
+            const logo = Logo.instance;
+            logo.canvasWidth = this.$refs.canvas.clientWidth;
+            logo.calculateWidths();
+            logo.save();
             this.textLeft = this.currentLogoObj.textLeft;
             this.textTop  = this.currentLogoObj.textTop;
             this.iconLeft = this.currentLogoObj.iconLeft;
             this.iconTop  = this.currentLogoObj.iconTop;
             this.iconScaleX = this.currentLogoObj.iconScaleX;
             this.iconScaleY = this.currentLogoObj.iconScaleY;
-            const logo = Logo.instance;
-            logo.canvasWidth = this.$refs.canvas.clientWidth;
-            logo.save();
             __canvas = new fabric.Canvas('c');
             __bg = __canvas.setDimensions({
                 width:this.currentLogoObj.canvasWidth, 
-                height:this.currentLogoObj.canvasWidth*3/4, 
+                height:this.currentLogoObj.canvasWidth*3/4,
             });
             __bg.set({
                 backgroundColor: this.currentLogoObj.bgColor,
@@ -454,7 +485,7 @@
                     scaleY : iconScaleY,
                     originX: 'center',
                     originY: 'center',
-                    fill :iconColor,
+                    fill: iconColor,
                     left: iconLeft,
                     top:  iconTop,
                 });
@@ -504,6 +535,7 @@
                     fill: this.currentLogoObj.textColor
                 })
                 __canvas.renderAll()
+                this.save();
             },
             bgColor(){
                 const logo = Logo.instance;
@@ -513,6 +545,7 @@
                     backgroundColor: this.currentLogoObj.bgColor
                 })
                 __canvas.renderAll()
+                this.save();
             },
             iconColor(){
                 const logo = Logo.instance;
@@ -523,6 +556,7 @@
                 });
                 if(__svg.hasOwnProperty('_objects')) __svg._objects.forEach(_=>_.set({fill: this.currentLogoObj.iconColor})); 
                 __canvas.renderAll()
+                this.save();
             },
             textLeft(){
                 const logo = Logo.instance;
@@ -531,6 +565,7 @@
                 logo.textScaleX = this.textScaleX
                 logo.textScaleY = this.textScaleY
                 logo.save();
+                this.save();
             },
             iconLeft(){
                 const logo = Logo.instance;
@@ -539,6 +574,7 @@
                 logo.iconScaleX = this.iconScaleX;
                 logo.iconScaleY = this.iconScaleY;
                 logo.save();
+                this.save();
             }
         }
     };

@@ -1,0 +1,19 @@
+.form{
+    &__cards-container{
+        &__card{
+            &-serial{
+                background: #FF9D42 !important;
+                color: white;
+            }
+            &__preview{
+                background: #333;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            &__preview img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

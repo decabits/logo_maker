@@ -1,0 +1,67 @@
+%button {
+    width: 100%;
+    height: 64px !important;
+    box-shadow: none;
+    font-size: 16px;
+    background: transparent !important;
+}
+
+
+.theme--light.v-divider {
+    border-color: #2FDCB2 !important; 
+    opacity: .30;
+}
+
+
+
+.download{ 
+    height: 100vh;
+    &__container{
+        position: relative;
+        top: 40%;
+        transform: translateY(-50%);
+        &__head{
+            color: #555;
+            font-weight: 200;
+        }
+        &__button-png{
+            @extend %button;
+            border: 1px solid #FF9D42;
+            color: #FF9D42; 
+        }
+        &__button-png:hover{
+            background-color: #FF5F04 !important;
+            color: white;
+            transition: .5s;
+        }
+        &__button-jpg{
+            @extend %button;
+            color: #FF9D42;
+        }
+        &__button-jpg:hover{
+            background-color: #FF5F04 !important;
+            color: white;
+            transition: .5s;
+        }
+        &__button-svg{
+            @extend %button;
+            border: 1px solid #FF9D42;
+            color: #FF9D42; 
+        }
+        &__button-svg:hover{
+            background-color: #FF5F04 !important;
+            color: white;
+            transition: .5s;
+        }
+        &__button-tpng{
+            @extend %button;
+            border: 1px solid #FF9D42;
+            color: #FF9D42; 
+        }
+        &__button-tpng:hover{
+            background-color: #FF5F04 !important;
+            color: white;
+            transition: .5s;
+        }
+    }
+}
