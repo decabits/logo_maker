@@ -2,7 +2,8 @@
   <v-container>
     <v-row class="form">
         <v-col md="10" class="form__title">
-            <h2>djlkjldjld</h2>
+            <h2 v-if="!logoArray.length">{{cms.edit.firstTitle}}</h2>
+            <h2 v-else>{{cms.edit.title}}</h2>
         </v-col>
         <v-col md="2">
             <v-btn class="form__button-new-logo" @click="saveLogoObject">New Logo</v-btn>
@@ -26,25 +27,26 @@
 <script>
   import Logo from '../../../models/logo'
   import Storage from '../../../services/storage'
+  import cms from '../../../common/data/messages.json'
 
   const storage = new Storage()
 
   export default { 
     data: () => ({
-      logoArray: storage.getAll()
+      logoArray: storage.getAll(),
+      cms :  cms
     }),
     methods: {
         saveLogoObject() {
             const logo =  Logo.instance
-            logo.id = this.logoArray.length + 1 || 1;
+            Logo.instance = new Logo({});
+            logo.name = '';
             logo.save();
             this.$router.push({path:'/form'})
         },
         updateLogo(i) {
-        // const logo = Logo.instance
         const logoSelected = this.logoArray[i]
         storage.set(logoSelected)
-        // logo.calculateWidths()
         Logo.instance = new Logo(storage.get())
         this.$router.push({path:'/logo-maker'})
         }

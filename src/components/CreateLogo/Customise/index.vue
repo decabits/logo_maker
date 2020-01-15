@@ -389,7 +389,12 @@
                     backgroundColor: this.currentLogoObj.bgColor
                 })
                 const pngURL = __canvas.toDataURL('image/png');
+                const jpgURL = __canvas.toDataURL({
+                    format : 'jpeg',
+                    quality : 1
+                });
                 logo.pngUrl =  pngURL
+                logo.jpgUrl = jpgURL
                 logo.svgEl = canvasToSvg
                 logo.save();
                 __canvas.renderAll()

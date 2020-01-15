@@ -13,7 +13,7 @@
             <v-btn class="download__container__button-png" @click="downloadPng">png</v-btn>
         </v-col>
         <v-col class="col-12" md="2" sm="2" >
-            <v-btn class="download__container__button-jpg" @click="downloadjpg">Jpeg</v-btn>
+            <v-btn class="download__container__button-jpg" @click="downloadJpg">Jpeg</v-btn>
         </v-col>
         <v-col md="2" class="col-12" sm="2" >
             <v-btn class="download__container__button-svg" @click="downloadSvg">Svg</v-btn>
@@ -57,6 +57,14 @@
             const a = this.$refs.a
             a.download = `${this.currentLogoObj.name}byDecabits.png`
             a.href = this.currentLogoObj.pngUrl
+            a.click()
+        },
+        downloadJpg(){
+            const a = this.$refs.a
+            a.download = `${this.currentLogoObj.name}byDecabits.jpg`
+            a.href = this.currentLogoObj.jpgUrl
+            // eslint-disable-next-line no-console
+                console.log(this.currentLogoObj.jpgUrl)
             a.click()
         },
         downloadTpng(){

@@ -2,7 +2,7 @@ import Storage from '../services/storage';
 
 class Logo {
 
-  constructor({id = 1, name = '', font = '' , fontId = 1, icon = '', iconId = 1, iconLeft = null, iconTop = null, textLeft= null, textTop = null,  transparentPngUrl='',  pngUrl = '', svgUrl = '', current = true, textColor = '#fff', bgColor = '#000000', iconColor = '#fff', canvasWidth = Number , svgEl = '', textScaleX = Number , textScaleY = Number , iconScaleX = .35, iconScaleY = .35, fontSize = 24 ,createdAt = new Date().getTime(), updatedAt = new Date().getTime()}) {
+  constructor({id = 1, name = '', font = '' , fontId = 1, icon = '', iconId = 1, iconLeft = null, iconTop = null, textLeft= null, textTop = null,  transparentPngUrl='', jprUrl ='' , pngUrl = '', svgUrl = '', current = true, textColor = '#fff', bgColor = '#000000', iconColor = '#fff', canvasWidth = Number , svgEl = '', textScaleX = Number , textScaleY = Number , iconScaleX = .35, iconScaleY = .35, fontSize = 24 ,createdAt = new Date().getTime(), updatedAt = new Date().getTime()}) {
     this.name = name;
     this.textColor = textColor;
     this.bgColor = bgColor;
@@ -10,6 +10,7 @@ class Logo {
     this.id = id;
     this.current = current;
     this.pngUrl = pngUrl;
+    this.jprUrl = jprUrl,
     this.svgUrl = svgUrl;
     this.font = font;
     this.svgEl = svgEl;
@@ -64,8 +65,8 @@ class Logo {
   }
 
   serialize = () => {
-    const {name, font, description, url, fontId, createdAt, id, icon, iconId, current, iconColor, textColor, bgColor, svgUrl, pngUrl, transparentPngUrl,iconScale, fontSize, canvasWidth, iconLeft, iconTop, textLeft, textTop,svgEl , textScaleX, textScaleY, iconScaleX, iconScaleY, updatedAt} = this;
-    return {name,font,  description, url, fontId, createdAt, id, icon, iconId, current, iconColor, textColor, bgColor , svgUrl, pngUrl, transparentPngUrl, iconScale, fontSize, canvasWidth, iconLeft, iconTop, textLeft, textTop , svgEl, textScaleX, textScaleY, iconScaleX, iconScaleY, updatedAt}
+    const {name, font, description, url, fontId, createdAt, id, icon, iconId, current, iconColor, textColor, bgColor,jprUrl,  svgUrl, pngUrl, transparentPngUrl,iconScale, fontSize, canvasWidth, iconLeft, iconTop, textLeft, textTop,svgEl , textScaleX, textScaleY, iconScaleX, iconScaleY, updatedAt} = this;
+    return {name,font,  description, url, fontId, createdAt, id, icon, iconId, current, iconColor, textColor, bgColor , svgUrl, jprUrl, pngUrl, transparentPngUrl, iconScale, fontSize, canvasWidth, iconLeft, iconTop, textLeft, textTop , svgEl, textScaleX, textScaleY, iconScaleX, iconScaleY, updatedAt}
   }
 
 }
