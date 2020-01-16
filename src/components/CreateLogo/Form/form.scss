@@ -1,12 +1,14 @@
+@import '../../colors.scss';
+
 .form{
     &__cards-container{
         &__card{
             &-serial{
-                background: #FF9D42 !important;
+                background:$orange !important;
                 color: white;
             }
             &__preview{
-                background: #333;
+                background: $grey-light-1;
                 margin: 0 !important;
                 padding: 0 !important;
             }

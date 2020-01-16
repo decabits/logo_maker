@@ -1,3 +1,5 @@
+@import '../../colors.scss';
+
 %button {
     width: 100%;
     height: 64px !important;
@@ -8,7 +10,7 @@
 
 
 .theme--light.v-divider {
-    border-color: #2FDCB2 !important; 
+    border-color: $sea-green !important; 
     opacity: .30;
 }
 
@@ -21,45 +23,45 @@
         top: 40%;
         transform: translateY(-50%);
         &__head{
-            color: #555;
+            color: $grey-light-2;
             font-weight: 200;
         }
         &__button-png{
             @extend %button;
-            border: 1px solid #FF9D42;
-            color: #FF9D42; 
+            border: 1px solid $orange;
+            color: $orange; 
         }
         &__button-png:hover{
-            background-color: #FF5F04 !important;
+            background-color: $orange-dark !important;
             color: white;
             transition: .5s;
         }
         &__button-jpg{
             @extend %button;
-            color: #FF9D42;
+            color: $orange;
         }
         &__button-jpg:hover{
-            background-color: #FF5F04 !important;
+            background-color: $orange-dark !important;
             color: white;
             transition: .5s;
         }
         &__button-svg{
             @extend %button;
-            border: 1px solid #FF9D42;
-            color: #FF9D42; 
+            border: 1px solid $orange;
+            color: $orange; 
         }
         &__button-svg:hover{
-            background-color: #FF5F04 !important;
+            background-color: $orange-dark !important;
             color: white;
             transition: .5s;
         }
         &__button-tpng{
             @extend %button;
-            border: 1px solid #FF9D42;
-            color: #FF9D42; 
+            border: 1px solid $orange;
+            color: $orange; 
         }
         &__button-tpng:hover{
-            background-color: #FF5F04 !important;
+            background-color: $orange-dark !important;
             color: white;
             transition: .5s;
         }

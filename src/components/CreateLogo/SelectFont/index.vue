@@ -39,6 +39,7 @@
   import Logo from '../../../models/logo'
   import textJson from '../../../common/data/fonts.json'
   import cmsJson from '../../../common/data/messages.json'
+  import charUtil from '../../../utils/charUtil'
 
   export default {
     name: 'HelloWorld',
@@ -46,7 +47,7 @@
       width: '33%',
       fontItems: textJson,
       cms: cmsJson.selectFont,
-      cardGrid: Number
+      cardGrid: charUtil.getGridSize()
     }),
     props: {
       currentLogoObj : {
@@ -68,22 +69,9 @@
       }
           
     },
-    mounted() {
-      let char = this.currentLogoObj.name.length;
-      if (char > 0 && char <= 6) {
-        this.cardGrid = 3
-      }
-      else if (char > 6 && char <=12) {
-        this.cardGrid = 4;
-      }
-      else if(char > 12 && char<=23) {
-        this.cardGrid = 6;
-      }
-      else if (char> 24) {
-        this.cardGrid = 12
-      }
-    }
+
   };
+
 </script>
 
 <style lang="scss" scoped>

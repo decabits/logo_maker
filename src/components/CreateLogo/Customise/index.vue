@@ -467,7 +467,9 @@
                 __canvas.renderAll()
                 this.save();
             }
+            
         },
+
         mounted() {
             const logo = Logo.instance;
             logo.canvasWidth = this.$refs.canvas.clientWidth;
@@ -537,6 +539,7 @@
             })
             this.save()
         },
+
         watch : {
             textColor(){
                 const logo = Logo.instance;

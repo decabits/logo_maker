@@ -1,4 +1,6 @@
+@import '../../colors.scss';
 @import url('https://fonts.googleapis.com/css?family=Alata|Baskervville|Calistoga|Fira+Sans|Ibarra+Real+Nova|Lato|Montserrat|Noto+Serif|Open+Sans|Poppins|Roboto|Roboto+Condensed&display=swap');
+
 %textPreview {
     position: relative;
     width: 100%;
@@ -9,9 +11,9 @@
 .logo-icon{
     &__preview-light{
         @extend %textPreview;
-        background: #fdfdfd;
+        background: $bg;
         text-align: center;
-        border: .5px solid #c4c4c4;
+        border: .5px solid $border-light;
         border-radius: 8px;
     }
     &__preview-icon{
@@ -27,22 +29,22 @@
         transform: translateY( -50%);
     }
     &__icon-selection-cards{
-        color: #333;
+        color: $grey-light-1;
         text-align: center;
         height: 120px;
         border-radius: 8px;
         cursor: pointer;
-        border: .5px solid #c4c4c4c4;
+        border: .5px solid $border-light;
     }
     &__icon-selection-cards:hover{
-        background: #e7e7e7;
-        border: .5px solid #c4c4c4;
+        background: $bg-light;
+        border: .5px solid $border-light;
         transition: .25s;
     }
     &__icon-selection-cards-indicators{
         width: 1%;
         height: 119px;
-        background-image: linear-gradient(to bottom , #FF5F04, #FF9D42 );
+        background-image: linear-gradient(to bottom , $orange-dark, $orange );
         position: absolute;
         border-radius: 8px 0 0 8px;
     }

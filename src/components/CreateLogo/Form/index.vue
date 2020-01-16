@@ -44,10 +44,12 @@
         this.$router.push({path:'/logo-maker'})
       }
     }
+
   }
 
 </script>
 
 <style lang="scss" scoped>
-    @import './form.scss'
+  @import './form.scss'
+
 </style>

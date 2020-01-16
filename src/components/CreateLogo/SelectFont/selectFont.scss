@@ -1,5 +1,6 @@
-
+@import '../../colors.scss';
 @import url('https://fonts.googleapis.com/css?family=Alata|Baskervville|Calistoga|Fira+Sans|Ibarra+Real+Nova|Lato|Montserrat|Noto+Serif|Open+Sans|Poppins|Roboto|Roboto+Condensed&display=swap');
+
 %textPreview {
   position: relative;
   width: 100%;
@@ -10,15 +11,15 @@
 .logo-text{
   &__preview-dark{
     @extend %textPreview;
-    background: #333;
+    background: $grey-light-1;
     color: white;
     border-radius: 8px 8px 0 0;
   }
   &__preview-light{
     @extend %textPreview;
-    background: #fdfdfd;
+    background: $bg;
     text-align: center;
-    border: .5px solid #c4c4c4;
+    border: .5px solid $border-light;
     border-radius: 0 0 8px 8px;
   }
   &__preview-text{
@@ -29,24 +30,25 @@
     z-index: 1;
   }
   &__font-selection-cards{
-    color: #333;
+    color: $grey-light-1;
     text-align: center;
     height: 120px;
     border-radius: 8px;
     cursor: pointer;
-    border: .5px solid #c4c4c4c4;
+    border: .5px solid $border-light;
   }
   &__font-selection-cards:hover{
     color: white;
-    background: #333;
-    border: 0 solid #c4c4c4;
+    background: $grey-light-1;
+    border: 0 solid $border-light;
     transition: .25s;
   }
   &__font-selection-cards-indicators{
     width: 1%;
     height: 119px;
-    background-image: linear-gradient(to bottom , #FF5F04, #FF9D42 );
+    background-image: linear-gradient(to bottom , $orange-dark, $orange );
     position: absolute;
     border-radius: 8px 0 0 8px;
   }
+  
 }
