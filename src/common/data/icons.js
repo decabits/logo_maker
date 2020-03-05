@@ -3,43 +3,43 @@ import icons from '../../components/module'
 const imageList = [
     {
       "id": 1,
-      "image": icons.ICON.alarm,
-      "imageName": "alarm"
+      "image": icons.ICON.cycle,
+      "imageName": "cycle"
     },
     {
       "id": 2,
-      "image": icons.ICON.arrow,
-      "imageName": "arrow"
+      "image": icons.ICON.tailor,
+      "imageName": "tailor"
     },
     {
       "id": 3,
-      "image": icons.ICON.barChart,
-      "imageName": "barChart"
+      "image": icons.ICON.cofee,
+      "imageName": "cofee"
     },
     {
       "id": 4,
-      "image": icons.ICON.battery,
-      "imageName": "battery"
+      "image": icons.ICON.random,
+      "imageName": "random"
     },
     {
       "id": 5,
-      "image": icons.ICON.benefitChart,
-      "imageName": "benefitChart"
+      "image": icons.ICON.bike,
+      "imageName": "bike"
     },
     {
       "id": 6,
-      "image": icons.ICON.bookmark,
-      "imageName": "bookmark"
+      "image": icons.ICON.travel,
+      "imageName": "travel"
     },
     {
       "id": 7,
-      "image": icons.ICON.calendar,
-      "imageName": "calendar"
+      "image": icons.ICON.chair,
+      "imageName": "chair"
     },
     {
       "id": 8,
-      "image": icons.ICON.cancelButton,
-      "imageName": "cancelButton"
+      "image": icons.ICON.beer,
+      "imageName": "beer"
     },
     {
       "id" : 9,
