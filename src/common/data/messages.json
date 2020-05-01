@@ -1,34 +1,33 @@
 {
-    "selectFont": {
-        "previewComponent" : {
-            "label": "Select your font",
-            "previewContent" : "Your preview"
-        },
-        "fontCards" : {
-            "title" : "Click on the card to choose the font for your logo"
-        }
+  "selectFont": {
+    "previewComponent": {
+      "label": "Select your font",
+      "previewContent": "Your preview"
     },
-
-    "selectIcon": {
-        "previewComponent" : {
-            "label": "Select your icon",
-            "previewContent" : "Your preview"
-        },
-        "iconCards" : {
-            "title" : "Click on the card to choose the icon for your logo"
-        }
-    },
-
-    "customise": {
-        
-    },
-
-    "edit" : {
-        "firstTitle" : "Welcome to Logo Maker! create your frist logo",
-        "title" : "Create your new logo"
-    },
-
-    "download": {
-        "title" : "Download Your logo in svg, png and jpg format"
+    "fontCards": {
+      "title": "Click on the card to choose the font for your logo"
     }
+  },
+
+  "selectIcon": {
+    "previewComponent": {
+      "label": "Select your icon",
+      "previewContent": "Your preview"
+    },
+    "iconCards": {
+      "title": "Click on the card to choose the icon for your logo"
+    }
+  },
+
+  "customise": {},
+
+  "edit": {
+    "firstTitle": "Welcome to Logo Maker! create your first logo",
+    "title": "Create your new logo",
+    "firstTimeVisitTitle": "Your favorite, created logo will appear here 🙂"
+  },
+
+  "download": {
+    "title": "Download Your logo in svg, png and jpg format"
+  }
 }

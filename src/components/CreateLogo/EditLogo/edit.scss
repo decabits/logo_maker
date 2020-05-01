@@ -1,32 +1,38 @@
-@import '../../colors.scss';
+@import "../../colors.scss";
 
-.form{
-    &__title{
-        color: $grey-light-2;
-    }
-    &__button-new-logo{
+.form {
+  &__title {
+    color: $grey-light-2;
+  }
+  &__button-new-logo {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    background: transparent;
+    border: 1px solid $grey-light-3;
+    border-style: dashed;
+  }
+  &__cards-container {
+    &__card {
+      &-serial {
+        background: $orange !important;
+        color: white;
+      }
+      &__preview {
+        background: $grey-light-1;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      &__preview img {
         width: 100%;
         height: auto;
-        box-shadow: none;
-        background: transparent;
-        border: 1px solid $grey-light-3;
-        border-style: dashed;
+      }
     }
-    &__cards-container{
-        &__card{
-            &-serial{
-                background: $orange !important;
-                color: white;
-            }
-            &__preview{
-                background: $grey-light-1;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            &__preview img{
-                width: 100%;
-                height: auto;
-            }
-        }
-    }
+  }
+}
+.firstTimeVisitTitle {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }

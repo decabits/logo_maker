@@ -1,0 +1,11 @@
+<svg id="Download" xmlns="http://www.w3.org/2000/svg" width="101" height="98" viewBox="0 0 101 98">
+  <rect id="Rectangle_446" data-name="Rectangle 446" width="92" height="92" rx="15" transform="translate(0 6)" fill="#ededed"/>
+  <rect id="Rectangle_447" data-name="Rectangle 447" width="94" height="92" rx="15" transform="translate(7)" fill="#484bb4"/>
+  <g id="Group_1156" data-name="Group 1156" transform="translate(-1191.181 -938.126)">
+    <g id="download-2" data-name="download" transform="translate(1221.181 960.126)">
+      <path id="Path_2085" data-name="Path 2085" d="M234.465,33.911a1.5,1.5,0,0,1-1.5-1.5V1.5a1.5,1.5,0,1,1,2.992,0V32.415A1.5,1.5,0,0,1,234.465,33.911Zm0,0" transform="translate(-210.528)" fill="#fff" stroke="#fff" stroke-width="0.971"/>
+      <path id="Path_2086" data-name="Path 2086" d="M159.615,249.1a1.485,1.485,0,0,1-1.057-.439l-7.979-7.979a1.5,1.5,0,0,1,2.117-2.117l6.921,6.922,6.922-6.922a1.5,1.5,0,0,1,2.117,2.117l-7.979,7.979A1.5,1.5,0,0,1,159.615,249.1Zm0,0" transform="translate(-135.678 -215.192)" fill="#fff" stroke="#fff" stroke-width="0.971"/>
+      <path id="Path_2087" data-name="Path 2087" d="M42.388,347.29H5.486A5.49,5.49,0,0,1,0,341.8v-8.976a1.5,1.5,0,0,1,2.992,0V341.8A2.5,2.5,0,0,0,5.486,344.3h36.9a2.5,2.5,0,0,0,2.494-2.494v-8.976a1.5,1.5,0,0,1,2.992,0V341.8A5.49,5.49,0,0,1,42.388,347.29Zm0,0" transform="translate(0 -299.416)" fill="#fff" stroke="#fff" stroke-width="0.971"/>
+    </g>
+  </g>
+</svg>
