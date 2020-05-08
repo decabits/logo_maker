@@ -3,6 +3,9 @@
 .form {
   &__title {
     color: $grey-light-2;
+    img {
+      height: 80px;
+    }
   }
   &__button-new-logo {
     width: 100%;
@@ -31,8 +34,51 @@
   }
 }
 .firstTimeVisitTitle {
-  height: 100vh;
+  height: 20vh;
   display: grid;
   align-items: center;
   justify-content: center;
+}
+
+// Footer
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+.box {
+  padding: 12px;
+  // background: #333;
+  color: black;
+}
+
+.def {
+  width: 60%;
+}
+
+.contact-us-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.abc {
+  width: 30%;
+  max-width: 360px;
+}
+
+h4 {
+  margin-bottom: 12px;
+}
+
+.button-wrapper {
+  text-align: center;
+}
+
+button {
+  width: 30%;
+  height: 40px;
+  background: orange;
+  border: 1px dashed lightgray;
+  margin-top: 12px;
 }
