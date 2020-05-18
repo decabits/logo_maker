@@ -126,7 +126,7 @@ import axios from "axios";
 import Logo from "../../../models/logo";
 import Storage from "../../../services/storage";
 import cms from "../../../common/data/messages.json";
-import websitelogo from "../../../../images/Logomaker_Logo.svg";
+import websitelogo from "../../../../images/Logomaker_LabDecabits.png";
 import logoimage from "../../../../images/Labdecabits_Labdecabits.png";
 
 const storage = new Storage();
@@ -188,8 +188,7 @@ export default {
           });
       }
       this.dialog = false;
-      this.form = { name: "", email: "", contact: "", message: "" }
-
+      this.form = { name: "", email: "", contact: "", message: "" };
     },
     saveLogoObject() {
       const logo = Logo.instance;
