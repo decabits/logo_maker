@@ -31,7 +31,8 @@ body {
 }
 .about-us-description {
   padding: 2%;
-  font-size: 18px;
+  font-size: 24px;
+  font-family: "Nunito", sans-serif;
 }
 .container-fluid__navbar {
   display: -webkit-box;
@@ -60,6 +61,7 @@ body {
   text-decoration: none;
   font-weight: 400;
   padding: 15px 20px;
+  font-size: 20px;
 }
 .container-fluid__navbar__header__right li a:hover {
   color: white;
@@ -104,6 +106,7 @@ body {
   color: white;
   background-color: #484bb4;
   font-size: 24px;
+  outline: none;
 }
 .container-fluid__landing-page__btn {
   position: relative;
@@ -113,6 +116,7 @@ body {
   background-color: white;
   color: #484bb4;
   font-size: 24px;
+  outline: none;
 }
 .create__logo__btn {
   margin-top: 8%;
@@ -126,6 +130,7 @@ body {
   background-color: #484bb4;
   font-size: 24px;
   margin-top: 8%;
+  outline: none;
 }
 .vertical-center {
   margin: auto;
