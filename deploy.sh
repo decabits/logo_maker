@@ -13,7 +13,7 @@ npm run build
 # cd docs
 
 # if you are deploying to a custom domain
-echo 'labs.decabits.com' > CNAME
+echo 'logomaker.decabits.com' > CNAME
 git add -A
 git commit -m 'deploy'
 
