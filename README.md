@@ -45,7 +45,7 @@ yarn run lint
 
 ## Demo -
 
-Pending
+[https://logomaker.decabits.com/](https://logomaker.decabits.com/)
 
 ## Contribution -
 

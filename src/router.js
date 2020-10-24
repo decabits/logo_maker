@@ -9,15 +9,15 @@ Vue.use(VueRouter);
 const routes = [
     { 
         path: '/', 
-        component: EditLogo 
+        component: EditLogo,
     },
     { 
         path: '/form', 
-        component: Form 
+        component: Form,
     },
     { 
         path: '/logo-maker', 
-        component: CreateLogo 
+        component: CreateLogo,
     }
 ]
 
