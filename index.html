@@ -18,10 +18,10 @@
             </div>
             <div class="container-fluid__navbar__header">
                 <ul class="container-fluid__navbar__header__right">
-                    <li><a href="#">Feature</a></li>
+                    <li><a href="#feature">Feature</a></li>
                     <li><a href="#work">How it Works</a></li>
-                    <li><a href="#">Get Start</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#getStarted">Get Start</a></li>
+                    <li><a href="#" id="myBtn" >Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -81,7 +81,7 @@
                 <div class="col-md-1"></div>
             </div>
         </section>
-        <h1 class="text-center headings">
+        <h1 id="feature" class="text-center headings">
             A great brand story starts with a great logo!
         </h1>
         <section lass="container-fluid__logo-creation">
@@ -268,7 +268,7 @@
             </div>
         </section>
 
-        <section class="text-center section-bg">
+        <section id="getStarted" class="text-center section-bg">
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10 col-sm-12 text-center">
@@ -397,6 +397,49 @@
             </div>
         </footer>
     </div>
+    <div id="myModal" class="modal">
+        
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h4>Contact Us !</h4>
+          <p>Want to discuss some work?</p>
+          <p>Just drop a message below or mail us at <a href="https://labs.decabits.com/info@decabits.com">info@decabits.com</a> </p>
+
+          <form style="border:1px solid #ccc">
+              <div class="container">
+                <input type="text" placeholder=" Name" name="name" required>
+                  <input type="text" placeholder=" Email" name="email" required>
+                  <input type="text" placeholder="Phone No." name="phone" required>
+                  <textarea style="height: 5vh; width:100%" placeholder="Your Message..."></textarea> 
+                  <div class="clearfix">
+                      <button type="submit" class="signupbtn">Submit</button>
+                  </div>
+              </div>
+          </form>
+        </div>
+      
+      </div>
 </body>
+      <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+        
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
 
 </html>

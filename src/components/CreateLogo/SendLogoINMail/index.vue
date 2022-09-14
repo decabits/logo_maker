@@ -8,7 +8,7 @@
       <v-card>
       <form ref="form" @submit="submitData">
           <v-card-title>
-          <span class="text-h5">Deliver Mail Address</span>
+          <span class="text-h5">We will send you the logo on your email address</span>
           </v-card-title>
           <v-card-text>
           <v-container>
@@ -39,6 +39,7 @@
           <v-btn
             type="submit"
             color="blue darken-1"
+            :loading="loading"
             text
           >
             Submit
@@ -67,6 +68,7 @@ export default {
     }
   },
   data: () => ({
+        loading: false,
         errors: {
           email: "",
         },
