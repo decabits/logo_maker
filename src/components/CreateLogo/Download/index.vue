@@ -30,16 +30,23 @@
         </v-col>
         <a ref="a"></a>
     </v-row>
+  <SendLogoInMail :visible="showScheduleForm" :logo-src= "this.currentLogoObj"  @close="showScheduleForm=false" :type="this.type" />
   </v-container>
 </template>
 
 <script>
 
     import cms from '../../../common/data/messages.json'
-
+    import SendLogoInMail from '../SendLogoINMail/index'
+    
     export default { 
+    components:{
+        SendLogoInMail
+    },
     data: () => ({
-        content : cms
+        content : cms,
+        showScheduleForm: false,
+        type: "",
     }),
     props: {
         currentLogoObj: {
@@ -48,30 +55,38 @@
     },
     methods: {
         downloadSvg(){
+            this.showScheduleForm = true;
+            this.type = "svg";
             const a = this.$refs.a
             a.download = `${this.currentLogoObj.name}byDecabits.svg`
             a.href = this.currentLogoObj.svgUrl
-            a.click()
+            //a.click()
         },
         downloadPng(){
+            this.showScheduleForm = true;
+            this.type = "png";
             const a = this.$refs.a
             a.download = `${this.currentLogoObj.name}byDecabits.png`
             a.href = this.currentLogoObj.pngUrl
-            a.click()
+            //a.click()
         },
         downloadJpg(){
+            this.showScheduleForm = true;
+            this.type = "jpg";
             const a = this.$refs.a
             a.download = `${this.currentLogoObj.name}byDecabits.jpg`
             a.href = this.currentLogoObj.jpgUrl
             // eslint-disable-next-line no-console
-                console.log(this.currentLogoObj.jpgUrl)
-            a.click()
+                console.log(this.currentLogoObj)
+            //a.click()
         },
         downloadTpng(){
+            this.showScheduleForm = true;
+            this.type = "transparentPngUrl";
             const a = this.$refs.a
             a.download = `${this.currentLogoObj.name}byDecabits.png`
             a.href = this.currentLogoObj.transparentPngUrl
-            a.click()
+            //a.click()
         }
     }
 

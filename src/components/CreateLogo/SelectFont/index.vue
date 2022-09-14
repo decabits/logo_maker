@@ -26,7 +26,7 @@
           <v-col :md="cardGrid" v-for="(item, i) in fontItems" :key="i" style="float:left" >
             <div :style="{fontFamily:item.fontFamily}" @click="changeFont(item.fontFamily, item.id)" class="logo-text__font-selection-cards">
               <div :class="{'logo-text__font-selection-cards-indicators' : currentLogoObj.fontId === item.id }"></div>
-              <h2 class="logo-text__preview-text" >{{currentLogoObj.name}}</h2>
+              <h2 class="logo-text__preview-text" >{{currentLogoObj.name ? currentLogoObj.name : cms.previewComponent.previewContent}} </h2>
             </div>
           </v-col>
         </v-col>

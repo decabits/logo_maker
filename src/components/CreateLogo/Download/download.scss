@@ -38,6 +38,7 @@
         }
         &__button-jpg{
             @extend %button;
+            border: 1px solid $orange;
             color: $orange;
         }
         &__button-jpg:hover{

@@ -36,7 +36,7 @@
     },
     { 
       "id" : 8,
-      "fontName ": "Fira2",
+      "fontName": "Fira2",
       "fontFamily" : "'Fira Sans', sans-serif"
     },
     {
@@ -66,12 +66,12 @@
     },
     {
         "id " : 14,
-      "fontName " : "Lato8",
+      "fontName" : "Lato8",
       "fontFamily " : "'Lato', sans-serif"
     },
     { 
         "id " : 15,
-      "fontName " : "Fira",
+      "fontName" : "Fira",
       "fontFamily" : "'Fira Sans', sans-serif"
     },
     {
@@ -91,7 +91,7 @@
     },
     {
       "id" : 19,
-      "fontName ": "Ibarra12",
+      "fontName": "Ibarra12",
       "fontFamily" : "'Ibarra Real Nova', serif"
     },
     {

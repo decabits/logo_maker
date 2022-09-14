@@ -377,7 +377,7 @@
                 this.processing = true
                 const storage = new Storage();
                 let canvasToSvg = __canvas.toSVG();
-                const svgURL =  "data:image/svg+xml," + encodeURIComponent(canvasToSvg);
+                const svgURL =  "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(canvasToSvg)));
                 __bg.set({
                     backgroundColor: 'transparent'
                 })
