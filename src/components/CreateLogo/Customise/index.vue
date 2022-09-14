@@ -44,6 +44,49 @@
                             <v-card flat class="logo-customise__select-color-container-card">
                                 <v-col md="12">
                                     <v-row class="px-4 mb-2">
+                                        <h2>Select Font</h2>
+                                    </v-row>
+                                    <v-row class="px-4 mb-2">
+
+                                        <v-col md="12" class="pa-0 col-1">
+                                             <v-select
+                                                @change="selectFont(currentLogoObj.fontId)"
+                                                v-model="currentLogoObj.fontId"
+                                                :items="fontItems"
+                                                item-text="fontName"
+                                                item-value="id"
+                                                :value="currentLogoObj.fontId"
+                                                :label="cms.previewComponent.label"  
+                                                >
+                                            </v-select>
+                                        </v-col>
+                                    </v-row>
+                                </v-col>
+                            </v-card>
+                            <v-card flat class="mt-3 logo-customise__select-color-container-card">
+                                <v-col md="12">
+                                    <v-row class="px-4 mb-2">
+                                        <h2>Select Icon</h2>
+                                    </v-row>
+                                    <v-row class="px-4 mb-2">
+
+                                        <v-col md="12" class="pa-0 col-1">
+                                            <v-select
+                                                @change="selectIcon(currentLogoObj.iconId)"
+                                                v-model="currentLogoObj.iconId"
+                                                :items="iconItems"
+                                                item-text="imageName"
+                                                item-value = "id"
+                                                :label="cms.previewComponent.label"
+                                                >
+                                            </v-select>
+                                        </v-col>
+                                    </v-row>
+                                </v-col>
+                            </v-card>
+                            <v-card flat class="mt-3 logo-customise__select-color-container-card">
+                                <v-col md="12">
+                                    <v-row class="px-4 mb-2">
                                         <h2>Select color</h2>
                                     </v-row>
                                     <v-row class="px-4 mb-2">
@@ -78,7 +121,7 @@
                                     </v-row>
                                 </v-col>
                             </v-card>
-                            <v-card  flat class="mt-4 logo-customise__select-color-container-card">
+                            <v-card  flat class="mt-3 logo-customise__select-color-container-card">
                                 <v-col md="12">
                                     <v-row class="px-4 mb-2">
                                         <h2>Change the icon scale</h2>
@@ -97,7 +140,7 @@
                                     </v-row>
                                 </v-col>
                             </v-card>
-                            <v-card  flat class="mt-4 logo-customise__select-color-container-card">
+                            <v-card  flat class="mt-3 logo-customise__select-color-container-card">
                                 <v-col md="12">
                                     <v-row class="px-4 mb-2">
                                         <v-col md="12" class="pa-0">
@@ -223,6 +266,10 @@
     import Logo from '../../../models/logo'
     import Storage from '../../../services/storage'
 
+    import cmsJson from '../../../common/data/messages.json'
+    import textJson from '../../../common/data/fonts.json'
+    import iconJson from '../../../common/data/icons.js'
+
     let __canvas = null;
     let __svg = null;
     let __text = null;
@@ -256,7 +303,10 @@
             iconScale: Number,
             iconScaleX: 0.5,
             iconScaleY: 0.5,
-            fontSize: ''
+            fontSize: '',
+            cms: cmsJson.selectFont,
+            fontItems: textJson,
+            iconItems: iconJson,
         }),
         props: {
             currentLogoObj : {
@@ -466,7 +516,55 @@
                 __svg.setCoords();
                 __canvas.renderAll()
                 this.save();
-            }
+            },
+            changeFont(font, fontId){
+                const logo = Logo.instance;
+                logo.font = font;
+                logo.fontId = fontId;
+                logo.save();
+                __text.set({
+                    fontFamily : font
+                })
+                __canvas.renderAll();
+                this.save();
+            },
+            selectFont(id){
+                let array = this.fontItems
+                let selectedArray = array.filter((e) => e.id == id )
+                const font = selectedArray[0].fontName;
+                this.changeFont(font, id)
+            },
+            changeIcon(icon, id){
+                const logo = Logo.instance;
+                logo.icon = icon;
+                logo.iconId = id;
+                this.currentLogoObj.icon = icon
+                logo.save();
+
+                __canvas.remove(__svg)
+                const { iconScaleX, iconScaleY, iconColor, iconLeft, iconTop } = this.currentLogoObj;
+                fabric.loadSVGFromURL(icon, function(objects, options) {
+                    __svg = fabric.util.groupSVGElements(objects, options);
+                    __svg.set({
+                        scaleX:  iconScaleX,
+                        scaleY : iconScaleY,
+                        originX: 'center',
+                        originY: 'center',
+                        fill: iconColor,
+                        left: iconLeft,
+                        top:  iconTop,
+                    });
+                    if(__svg.hasOwnProperty('_objects')) __svg._objects.forEach(_=>_.set({fill: iconColor}));
+                    __canvas.add(__svg)
+                });
+                this.save();
+            },
+            selectIcon(id){
+                let array = this.iconItems
+                let selectedArray = array.filter((e) => e.id == id )
+                const icon = selectedArray[0].image;
+                this.changeIcon(icon, id)
+            },
             
         },
 
