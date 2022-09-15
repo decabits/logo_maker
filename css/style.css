@@ -91,7 +91,6 @@ body {
 .container-fluid__landing-page__button img {
   -webkit-transform: translate(6px, -10px);
   transform: translate(6px, -10px);
-  z-index: 10;
   width: 10%;
   height: auto;
   position: relative;
@@ -407,7 +406,7 @@ section {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 50px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -424,6 +423,11 @@ section {
   padding: 20px;
   border: 1px solid #888;
   width: 25%;
+  min-width: 500px;
+  min-height: 550px;
+  border: 0.1px solid;
+  border-radius: 5px;
+  background-clip: padding-box;
 }
 
 /* The Close Button */
@@ -432,6 +436,7 @@ section {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  margin-top: 5px;
 }
 
 .close:hover,
@@ -444,21 +449,25 @@ section {
 input[type=text],
 input[type=password] {
     width: 100%;
-    padding: 12px 20px;
+    padding: 10px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 2px solid #ccc;
     box-sizing: border-box;
+    border-radius: 5px;
 }
 /* set a style for all buttons*/
  
 button {
-    background-color: Green;
+    background-color: #007bff;
+    border-color: #007bff;
     color: white;
-    padding: 15px 20px;
+    padding: 10px 20px;
     margin: 8px 0;
     cursor: pointer;
     width: 100%;
+    font-size: 1rem;
+    border-radius: 5px;
 }
 /*set styles for the cancel button*/
  
@@ -471,7 +480,7 @@ button {
 .cancelbtn,
 .signupbtn {
     float: left;
-    width: 50%;
+    width: 100%;
 }
 /*add padding to container elements*/
  
@@ -479,11 +488,37 @@ button {
     padding: 16px;
 }
 /*clear floats*/
+.clearfix {
+    margin-left: 39%;
+    margin-right: 39%;
+}
  
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
+}
+
+#contactTextArea {
+  height: 150px; 
+  width:100%; 
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+#modalHeader{
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.25rem;
+}
+.modalPara {
+  margin-bottom: 1rem;
 }
 /*styles for cancel button and signup button
   on extra small screens*/

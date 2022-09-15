@@ -401,23 +401,40 @@
         
 
         <!-- Modal content -->
-        <div class="modal-content">
+        <div class="modal-content col-md-10 col-lg-4 ">
           <span class="close">&times;</span>
-          <h4>Contact Us !</h4>
-          <p>Want to discuss some work?</p>
-          <p>Just drop a message below or mail us at <a href="https://labs.decabits.com/info@decabits.com">info@decabits.com</a> </p>
+          <h4 class="pt-md-4 pb-md-4" id="modalHeader" >Contact Us !</h4>
+          <div class="" style="text-align: center; margin-top: 1rem; " >
+              <p class="modalPara" >Want to discuss some work? <br>
+                Just drop a message below or mail us at <a href="https://labs.decabits.com/info@decabits.com" style="color: #007bff;" >info@decabits.com</a> </p>
+          </div>
 
-          <form style="border:1px solid #ccc">
               <div class="container">
-                <input type="text" placeholder=" Name" name="name" required>
-                  <input type="text" placeholder=" Email" name="email" required>
-                  <input type="text" placeholder="Phone No." name="phone" required>
-                  <textarea style="height: 5vh; width:100%" placeholder="Your Message..."></textarea> 
+                <input type="text" placeholder=" Name" id="name"  name="name" required>
+                  <input type="text" placeholder=" Email" id="email" name="email" required>
+                  <input type="text" placeholder="Phone No." id="phone" name="phone" required>
+                  <textarea id="contactTextArea" name="message" placeholder="Your Message..."></textarea> 
                   <div class="clearfix">
-                      <button type="submit" class="signupbtn">Submit</button>
+                      <button id="submitBtn" class="signupbtn">Submit</button>
                   </div>
               </div>
-          </form>
+              <div
+              style=" width:100%; justify-content:center; display:flex"
+            >
+              <a href="https://www.linkedin.com/company/decabits/" target="_blank"
+              style="background-color: #0077B7;"
+                ><i
+                  class="fab fa-linkedin fa-2x"
+                  style="margin:5px 5px; color: #fff"
+                ></i
+              ></a>
+              <a href="https://github.com/decabits" target="_blank"
+                ><i
+                  class="fab fa-github fa-2x"
+                  style="margin:5px 5px; color:black;"
+                ></i
+              ></a>
+            </div>
         </div>
       
       </div>
@@ -426,9 +443,9 @@
         var modal = document.getElementById("myModal");
         var btn = document.getElementById("myBtn");
         var span = document.getElementsByClassName("close")[0];
-        
+            
         btn.onclick = function() {
-          modal.style.display = "block";
+          modal.style.display = "flex";
         }
         
         span.onclick = function() {
@@ -440,6 +457,34 @@
             modal.style.display = "none";
           }
         }
+
+        function handleSubmit(){
+          let name = document.getElementsByName("name")[0].value
+          let email = document.getElementsByName("email")[0].value
+          let phone = document.getElementsByName("phone")[0].value
+          let message = document.getElementsByName("message")[0].value
+          if(name===""|| email === ""|| phone===""|| message ==="" ) return alert("All fields required")
+          let  newData = {
+                  subject: "Website Contact Form: " + `${name.charAt(0).toUpperCase() + name.toString().slice(1)}`,
+                  text: `You have received a new message from DecabitsLab .\n\nHere are the details:\n\nName: ${name.charAt(0).toUpperCase() + name.toString().slice(1)}\n\nMobile: ${phone}\n\nEmail: ${email}\n\nMessage:\n${message}`,
+                  to: "info@decabits.com",
+                  from: `"DecabitsLab" info@decabits.com`
+            };
+          fetch("https://db-node-mail-service.herokuapp.com/api/email",{
+            method:"POST",
+              headers: {
+                    "Content-Type": "application/json",
+                  },
+              body: JSON.stringify(newData)
+          }
+          ).then((response)=> response.statusText )
+          .then((data)=>{
+            console.log('data', data)
+            modal.style.display = "none";
+          })
+
+        }
+        document.getElementById("submitBtn").addEventListener("click", () => handleSubmit());
         </script>
 
 </html>
