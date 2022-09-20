@@ -588,7 +588,7 @@ button {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  flex-basis: 11.929vw;
+  flex-basis: 11.75vw;
 }
 
 .brands-section-logo:hover {
@@ -729,7 +729,7 @@ button {
 .footer-section {
   background-image: url('../images/footer-bg.webp');
   min-height: 28.25rem;
-  width: 100vw;
+  /* width: 100vw; */
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
