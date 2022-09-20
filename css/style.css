@@ -494,7 +494,7 @@ button {
 
 .big-hero-2-section {
   width: 100%;
-  height: 63rem;
+  /* height: 63rem; */
   border: solid 0.5px #707070;
   background-color: #c1e1fd;
   display: flex;
@@ -502,6 +502,9 @@ button {
   align-items: center;
   padding-top: 8.5rem;
   position: relative;
+}
+
+.big-hero-2-sectio-top {
   padding-left: 15vw;
   padding-right: 15vw;
 }
@@ -552,8 +555,10 @@ button {
 .big-hero-2-section-image {
   width: 100%;
   position: absolute;
+  position: relative;
   /* top: 60%; */
-  bottom: -215px;
+  margin-top: -200px;
+  bottom: -200px;
 }
 
 .brands-section {
@@ -575,16 +580,15 @@ button {
 .brands-section-logos {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 0.75vw;
 }
 
 .brands-section-logo {
-  width: 10.5rem;
   border-radius: 5px;
-  margin-bottom: 1rem;
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  flex-basis: 11.929vw;
 }
 
 .brands-section-logo:hover {
@@ -692,7 +696,7 @@ button {
 
 .business-card-section {
   display: flex;
-  height: 40rem;
+  min-height: 40rem;
   overflow: hidden;
 }
 
@@ -719,19 +723,23 @@ button {
 .business-card-section-image {
   height: 100%;
   object-fit: cover;
+  width: 100%;
 }
 
 .footer-section {
   background-image: url('../images/footer-bg.webp');
-  height: 28.25rem;
+  min-height: 28.25rem;
   width: 100vw;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #fff;
+  background-position: center;
+  height: calc(100vw / 3.19);
+
 }
 
 .footer-section-title {
