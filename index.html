@@ -19,13 +19,14 @@
         <header class="container-fluid__navbar">
             <div class="container-fluid__navbar__image">
                 <img src="images/Logomaker_Logo.svg" />
+                    <img src="./src/assets/images/svg/barsSolid.svg" height="30px" width="30px" style="margin-right: 15px;" id="navImg" />
             </div>
-            <nav class="container-fluid__navbar__header">
+            <nav id="navbar" class="container-fluid__navbar__header">
                 <ul class="container-fluid__navbar__header__right">
-                    <li><a href="#feature">Feature</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#get-started">Get Started</a></li>
-                    <li><a href="#" id="myBtn" >Contact us</a></li>
+                    <li><a class="navItem" href="#feature">Feature</a></li>
+                    <li><a class="navItem" href="#how-it-works">How It Works</a></li>
+                    <li><a class="navItem" href="#get-started">Get Started</a></li>
+                    <li><a class="navItem" href="#" id="myBtn" >Contact us</a></li>
                 </ul>
             </nav>
         </header>
@@ -41,7 +42,7 @@
 
 
         <main class="big-hero-section">
-            <img class="big-hero-section-image" src="images/big-hero.webp" alt="start now" />
+            <img class="big-hero-section-image" src="src/assets/images/bigHero.png" alt="start now" />
         </main>
 
         <section class="step-section" id="how-it-works">
@@ -67,7 +68,7 @@
 
         <section class="big-hero-2-section" id="feature" >
             <div class="big-hero-2-sectio-top">
-                <h1 class="big-hero-2-section-title" >Use it wherever and <span>whenever you need</span></h1>
+                <h1 class="big-hero-2-section-title" >Use it wherever and <span id="big-hero-2-span" >whenever you need</span></h1>
                 <div class="big-hero-2-subsection-container">
                     <div class="big-hero-2-subsection">
                         <h3 class="big-hero-2-subsection-title" >Royalty-free</h3>
@@ -80,7 +81,7 @@
                     </div>
                 </div>
             </div>
-            <img class="big-hero-2-section-image" src="images/big-hero2.webp" alt="start now">
+            <img class="big-hero-2-section-image" src="src/assets/images/bigHero2.png" alt="start now">
         </section>
 
         <section class="brands-section">
@@ -184,7 +185,7 @@
                 <p class="business-card-section-content" >Make as many different versions of your logo as you like in just a few clicks using our splendid logo creator!</p>
             </div>
             <div class="business-card-section-right">
-                <img class="business-card-section-image" src="images/business-cards.webp" alt="brands with great logo">
+                <img class="business-card-section-image" src="src/assets/images/macBook.png" alt="brands with great logo">
             </div>
         </section>
 
@@ -322,6 +323,16 @@
 
         }
         document.getElementById("submitBtn").addEventListener("click", () => handleSubmit());
+        document.getElementById('navImg').addEventListener('click',()=> toggleNavbar())
+        document.getElementsByClassName('navItem').item(0).addEventListener('click',()=> toggleNavbar())
+        document.getElementsByClassName('navItem').item(1).addEventListener('click',()=> toggleNavbar())
+        document.getElementsByClassName('navItem').item(2).addEventListener('click',()=> toggleNavbar())
+        document.getElementsByClassName('navItem').item(3).addEventListener('click',()=> toggleNavbar())
+
+        function toggleNavbar(){
+            let nav = document.querySelector('.container-fluid__navbar')
+            nav.classList.toggle('active')
+        }
     </script>
 
 </html>
