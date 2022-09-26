@@ -19,3 +19,243 @@
         }
     }
 }
+
+#formContainer {
+    background-image: url("../../../assets/images/Artboard.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: center;
+}
+
+.formInputContainer{
+    position: relative;
+    align-self: baseline;
+    margin-left: 0;
+}
+
+.inputField{
+    color: #fff;
+    width: 280px;
+    height: 35px;
+    padding-left: 15px;
+    padding-top: 2px;
+    background-color: #000;
+    margin-top: 2vw;
+    margin-left: -1vw;
+}
+
+.title {
+    color: #fff; 
+    font-size: 3rem !important;
+}
+
+.subtitle {
+    padding-bottom:4%; 
+    padding-top:4%; 
+    color: #fff; 
+    font-size: 1rem !important;
+    text-align: center;
+}
+
+@media (min-width: 1290px) and (max-width: 1300px){
+    .formInputContainer{
+        position: relative;
+        margin-left: 0;
+    }
+}
+
+
+
+@media (max-width: 1290px){
+    .formInputContainer{
+        position: relative;
+        align-self: baseline;
+        margin-left: 0;
+    }
+    
+    .inputField{
+        color: #fff;
+        width: 230px;
+        height: 35px;
+        padding-left: 15px;
+        padding-top: 2px;
+        margin-top: 4vw;
+        margin-left: -1vw;
+    }
+
+    .inputField:focus{
+        outline: none;
+    }
+    .title {
+        color: #fff; 
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        padding-bottom:4%; 
+        padding-top:4%; 
+        color: #fff; 
+        font-size: 0.8rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1290px) and (min-width: 1020px){
+    .formInputContainer{
+        position: relative;
+        margin-left: 0;
+    }
+
+    .inputField{
+        color: #fff;
+        width: 230px;
+        height: 35px;
+        padding-left: 15px;
+        padding-top: 2px;
+        margin-top: 10vh;
+        margin-left: -1vw;
+    }
+}
+
+@media (max-width: 1200px){
+    .holder {
+        margin-top: 1%;
+    }
+}
+
+@media (max-width: 1080px) and (min-width: 961px) {
+    .holder {
+        margin-top: 1%;
+    }
+}
+
+@media (max-width: 1020px){
+    .formInputContainer{
+        position: relative;
+        align-self: baseline;
+        margin-left: 0;
+    }
+    
+    .inputField{
+        color: #fff;
+        width: 230px;
+        height: 35px;
+        padding-left: 15px;
+        padding-top: 2px;
+        margin-top: 12vh;
+        margin-left: -1vw;
+    }
+
+    .inputField:focus{
+        outline: none;
+    }
+}
+
+@media (min-width: 958px) and (max-width: 960px) {
+    .formInputContainer{
+        position: relative;
+        align-self: baseline;
+        margin-left: 0;
+    }
+    
+    .inputField{
+        color: #fff;
+        width: 230px;
+        height: 35px;
+        padding-left: 15px;
+        padding-top: 2px;
+        margin-top: 15vh;
+        margin-left: -1vw;
+    }
+
+    .inputField:focus{
+        outline: none;
+    }
+}
+
+@media (max-width: 959px){
+    .formInputContainer{
+        position: relative;
+        align-self: baseline;
+        margin-left: 0;
+    }
+    
+    .inputField{
+        color: #fff;
+        width: 230px;
+        height: 35px;
+        padding-left: 15px;
+        padding-top: 2px;
+        margin-top: 15vh;
+        margin-left: -1vw;
+    }
+
+    .inputField:focus{
+        outline: none;
+    }
+    .holder{
+        margin-top: -1%;
+    }
+}
+
+@media (max-width: 750px){
+    .formInputContainer{
+        position: relative;
+        align-self: baseline;
+        margin-left: 0;
+    }
+    
+    .inputField{
+        color: #fff;
+        width: 230px;
+        height: 35px;
+        padding-left: 15px;
+        padding-top: 2px;
+        margin-top: 18vh;
+        margin-left: -1vw;
+    }
+
+    .inputField:focus{
+        outline: none;
+    }
+    .holder {
+        margin-top: -1%;
+    }
+}
+
+@media (max-width: 400px){
+
+    .title {
+        color: #fff; 
+        font-size: 1.85rem !important;
+    }
+    
+    .subtitle {
+        padding-bottom:4%; 
+        padding-top:4%; 
+        color: #fff; 
+        font-size: 0.8rem !important;
+        text-align: center;
+    }
+
+    .formInputContainer{
+        position: relative;
+        align-self: baseline;
+        margin-left: 0;
+    }
+    
+    .inputField{
+        color: #fff;
+        width: 200px;
+        height: 35px;
+        padding-left: 15px;
+        padding-top: 2px;
+        margin-top: 18vh;
+        margin-left: -1vw;
+    }
+
+    .inputField:focus{
+        outline: none;
+    }
+}

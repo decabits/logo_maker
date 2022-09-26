@@ -1,19 +1,30 @@
 <template>
-  <v-container>
+  <v-container id="formContainer" >
+    <v-row class="d-flex flex-column align-center" style="margin-top: 8vw" >
+        <h1 class="title" >Create your Logo</h1>
+        <h2 class="subtitle">
+          ENTER YOUR COMPANY NAME BELOW TO GET STARTED WITH OUR LOGO MAKER.
+        </h2>    
+    </v-row>
     <v-row class="form" style="height:100vh;display:flex;align-items:center;">
-      <v-col md="6" offset="3" class="text-center">
-        <h1>Start Designing Your Logo</h1>
-        <h2 style="padding-top:4%">
-          Enter the name of your business or organization.
-        </h2>
-
-        <v-text-field
+      <v-col class="text-center formInputContainer ">
+      <v-row class="d-flex flex-column align-center holder" >
+        <input
+          class="inputField"
+          placeholder="Company Name"
+          v-model="logoText"
+          @change="saveText"
+          :label="logoArray.name"
+        />
+        <br/>
+        <!-- <v-text-field
           v-model="logoText"
           @change="saveText"
           :label="logoArray.name"
         >
-        </v-text-field>
-        <v-btn @click="addNewLogo">Let's Go</v-btn>
+        </v-text-field> -->
+        <v-btn @click="addNewLogo" style="margin-top:10px;" >Let's Go</v-btn>      
+      </v-row>
       </v-col>
     </v-row>
   </v-container>
@@ -55,4 +66,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "./form.scss";
+@media (max-width: 100vw) {
+  .container{
+    max-width:100vw;
+  }
+
+} 
 </style>
