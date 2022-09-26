@@ -632,6 +632,7 @@ button {
   background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: overlay;
   display: flex;
+  background-position: center;
 }
 
 /* 
@@ -689,10 +690,8 @@ button {
 
 .business-card-section-image {
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
-  background: rgb(12,169,246);
-  background: linear-gradient(129deg, rgba(12,169,246,1) 0%, rgba(77,87,171,1) 100%);
 }
 
 .footer-section {
@@ -751,9 +750,11 @@ button {
   .step-subsection-content{
     margin-bottom: 1.15rem;
   }
+  .brands-section-logo{
+    flex-basis: 11.65vw;
+  }
   .brands-section-logos{
-    gap: 3.2vw;
-    justify-content: space-between;
+    gap: 0.75vw;
   }
 }
 
@@ -780,10 +781,10 @@ button {
     text-align: center;
   }
   .brands-section-logo{
-    flex-basis: 15.75vw;
+    flex-basis: 13.65vw;
   }
   .brands-section-logos{
-    gap: 8%;
+    gap: 0.75vw;
     grid-template-columns: auto auto auto auto;
   }
   #navImg{
@@ -874,10 +875,10 @@ button {
     display: block;
   }
   .brands-section-logo{
-    flex-basis: 15.75vw;
+    flex-basis: 13.65vw;
   }
   .brands-section-logos{
-    gap: 8%;
+    gap: 0.75vw;
     grid-template-columns: auto auto auto;
   }
   #navImg{
@@ -920,6 +921,42 @@ button {
     letter-spacing: 0.5px;
     margin-bottom: 3rem;
 }
+
+}
+
+@media (max-width: 730px){
+
+  .brands-section-logos{
+    gap: 0.75vw;
+    grid-template-columns: auto auto auto;
+  }
+  .brands-section-logo{
+    flex-basis: 13.5vw;
+  }
+
+}
+
+@media (max-width: 530px) and (min-width: 400px) {
+
+  .brands-section-logos{
+    gap: 0.75vw;
+    grid-template-columns: auto auto auto auto;
+  }
+  .brands-section-logo{
+    flex-basis: 20.5vw;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .brands-section-logos{
+    gap: 0.75vw;
+    grid-template-columns: auto auto auto;
+  }
+  .brands-section-logo{
+    flex-basis: 26.5vw;
+  }
 
 }
 

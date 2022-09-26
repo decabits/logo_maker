@@ -320,6 +320,10 @@
           ).then((response)=> response.statusText )
           .then((data)=>{
             console.log('data', data)
+            document.getElementsByName("name")[0].value = ""
+            document.getElementsByName("email")[0].value = ""
+            document.getElementsByName("phone")[0].value = ""
+            document.getElementsByName("message")[0].value = ""
             modal.style.display = "none";
           })
 

@@ -1,6 +1,6 @@
 <template>
   <v-container id="formContainer" >
-    <v-row class="d-flex flex-column align-center" style="margin-top: 8vw" >
+    <v-row class="d-flex flex-column align-center subContainer" >
         <h1 class="title" >Create your Logo</h1>
         <h2 class="subtitle">
           ENTER YOUR COMPANY NAME BELOW TO GET STARTED WITH OUR LOGO MAKER.
@@ -8,7 +8,7 @@
     </v-row>
     <v-row class="form" style="height:100vh;display:flex;align-items:center;">
       <v-col class="text-center formInputContainer ">
-      <v-row class="d-flex flex-column align-center holder" >
+      <v-row class="d-flex flex-column align-center" >
         <input
           class="inputField"
           placeholder="Company Name"

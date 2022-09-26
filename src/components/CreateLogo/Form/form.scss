@@ -41,7 +41,7 @@
     padding-left: 15px;
     padding-top: 2px;
     background-color: #000;
-    margin-top: 2vw;
+    margin-top: 50px;
     margin-left: -1vw;
 }
 
@@ -51,11 +51,23 @@
 }
 
 .subtitle {
-    padding-bottom:4%; 
-    padding-top:4%; 
+    padding:4%; 
     color: #fff; 
     font-size: 1rem !important;
     text-align: center;
+}
+
+.subContainer{
+    margin-top: 8vw; 
+    height: 180px;
+}
+
+
+@media (min-width: 1300px){
+    .formInputContainer{
+        position: relative;
+        margin-left: 0;
+    }
 }
 
 @media (min-width: 1290px) and (max-width: 1300px){
@@ -113,7 +125,7 @@
         height: 35px;
         padding-left: 15px;
         padding-top: 2px;
-        margin-top: 10vh;
+        margin-top: 7vh;
         margin-left: -1vw;
     }
 }
@@ -143,7 +155,7 @@
         height: 35px;
         padding-left: 15px;
         padding-top: 2px;
-        margin-top: 12vh;
+        margin-top: 7vh;
         margin-left: -1vw;
     }
 
@@ -165,7 +177,7 @@
         height: 35px;
         padding-left: 15px;
         padding-top: 2px;
-        margin-top: 15vh;
+        margin-top: 7vh;
         margin-left: -1vw;
     }
 
@@ -187,7 +199,7 @@
         height: 35px;
         padding-left: 15px;
         padding-top: 2px;
-        margin-top: 15vh;
+        margin-top: 7vh;
         margin-left: -1vw;
     }
 
@@ -196,6 +208,10 @@
     }
     .holder{
         margin-top: -1%;
+    }
+    .subContainer{
+        margin-top: 8vw; 
+        height: 190px;
     }
 }
 
@@ -212,7 +228,7 @@
         height: 35px;
         padding-left: 15px;
         padding-top: 2px;
-        margin-top: 18vh;
+        margin-top: 7vh;
         margin-left: -1vw;
     }
 
@@ -221,6 +237,10 @@
     }
     .holder {
         margin-top: -1%;
+    }
+    .subContainer{
+        margin-top: 8vw; 
+        height: 30vh;
     }
 }
 
@@ -251,7 +271,7 @@
         height: 35px;
         padding-left: 15px;
         padding-top: 2px;
-        margin-top: 18vh;
+        margin-top: 7vh;
         margin-left: -1vw;
     }
 
