@@ -1256,4 +1256,7 @@ button {
   .hero-section-subtitle {
     margin-bottom: 10px;
   }
+  .container-fluid__navbar__header__right li a{
+    font-size: var(--fs-800);
+  }
 }
