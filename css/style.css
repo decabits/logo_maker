@@ -164,7 +164,7 @@ body {
   padding: 20px;
   border: 1px solid #888;
   width: 25%;
-  min-width: 500px;
+  width: 520px;
   min-height: 550px;
   border: 0.1px solid;
   border-radius: 5px;
@@ -232,12 +232,37 @@ button {
 .clearfix {
     margin-left: 39%;
     margin-right: 39%;
+    display: flex;
+    justify-content: space-evenly;
 }
  
 .clearfix::after {
     content: "";
     clear: both;
     display: table;
+}
+
+.loader {
+  display: none;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 3s linear infinite; /* Safari */
+  animation: spin 3s linear infinite;
+  margin:10px 0 10px 0;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 #contactTextArea {
@@ -253,10 +278,10 @@ button {
 }
 #modalHeader{
   padding: 0.7rem 1rem;
-  border-bottom: 1px solid #dee2e6;
   display: flex;
   justify-content: space-around;
   font-size: 1.25rem;
+  width: 100%;
 }
 .modalPara {
   margin-bottom: 1rem;
@@ -283,23 +308,23 @@ button {
     text-align: center;
   }
   #modalHeader {
-    font-size: 5.25vw;
+    font-size: 1.25rem;
   }
   .modalPara {
-    font-size: 3.75vw;
+    font-size: 1.5vw;
   }
-  .modal-container input {
-    font-size: 3vw;
+  .modal-container input textarea {
+    font-size: 2.75vw;
   }
   #contactTextArea {
-    font-size: 3vw;
     height: 10vh; 
   }
   #submitBtn {
-    font-size: 4vw;
+    width: 120px;
+    font-size: 1.2vw;
   }
   #myModal .fa-2x {
-    font-size: 7vw;
+    font-size: 2vw;
   }
 }
 
@@ -756,6 +781,49 @@ button {
   .brands-section-logos{
     gap: 0.75vw;
   }
+  .modalPara {
+    font-size: 1.5vw;
+  }
+  .modal-container input textarea {
+    font-size: 2.75vw;
+  }
+  #contactTextArea {
+    height: 10vh; 
+  }
+  #submitBtn {
+    width: 120px;
+    font-size: 1.2vw;
+  }
+  #myModal .fa-2x {
+    font-size: 2vw;
+  }
+  .modal-content{
+    width: 520px;
+  }
+}
+
+@media (max-width: 1000px){
+
+  .modalPara {
+    font-size: 1.5vw;
+  }
+  .modal-container input textarea {
+    font-size: 2.75vw;
+  }
+  #contactTextArea {
+    height: 10vh; 
+  }
+  #submitBtn {
+    width: 120px;
+    font-size: 1.2vw;
+  }
+  #myModal .fa-2x {
+    font-size: 2vw;
+  }
+  .modal-content{
+    width: 520px;
+  }
+
 }
 
 @media (max-width: 900px) {
@@ -804,6 +872,25 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+  .modalPara {
+    font-size: 1.5vw;
+  }
+  .modal-container input textarea {
+    font-size: 2.75vw;
+  }
+  #contactTextArea {
+    height: 10vh; 
+  }
+  #submitBtn {
+    width: 120px;
+    font-size: 1.2vw;
+  }
+  #myModal .fa-2x {
+    font-size: 2vw;
+  }
+  .modal-content{
+    width: 520px;
   }
 }
 
@@ -921,6 +1008,22 @@ button {
     letter-spacing: 0.5px;
     margin-bottom: 3rem;
 }
+.modalPara {
+  font-size: 14px;
+}
+.modal-container input textarea {
+  font-size: 2.75vw;
+}
+#contactTextArea {
+  height: 10vh; 
+}
+#submitBtn {
+  width: 120px;
+  font-size: 1.2vw;
+}
+#myModal .fa-2x {
+  font-size: 2vw;
+}
 
 }
 
@@ -932,6 +1035,9 @@ button {
   }
   .brands-section-logo{
     flex-basis: 13.5vw;
+  }
+  .modal-content{
+    width: 320px;
   }
 
 }
@@ -1124,6 +1230,22 @@ button {
     color: var(--clr-gray);
     letter-spacing: 0.5px;
     margin-bottom: 3rem;
+}
+.modal-container input textarea {
+  font-size: 2.75vw;
+}
+#contactTextArea {
+  height: 10vh; 
+}
+#submitBtn {
+  width: 100px;
+  font-size: 2.75vw;
+}
+#myModal .fa-2x {
+  font-size: 4vw;
+}
+.modal-content{
+  width: 320px;
 }
   
 
