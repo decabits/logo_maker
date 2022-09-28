@@ -107,7 +107,7 @@ export default {
         let url = "";
         let fileName = "";
         const formData = new FormData()
-
+        this.loading = true;
         if(this.type === "png"){
           fileName = `${this.logoSrc.name}byDecabits.png`
           url = this.logoSrc.pngUrl
@@ -138,6 +138,8 @@ export default {
               })
               .then((res) => {
                 this.show = false;
+                this.loading = false;
+                this.form.email = ""
                 window.console.log(res.data);
               });    
            
