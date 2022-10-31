@@ -7,21 +7,29 @@
     color: #555;
     border-radius: 0;
     margin-top: 0;
+    text-transform: capitalize;
 }
 .styling-button1{
     width: 100% !important;
-    background-image: linear-gradient(to right, #1596DF, #0057FF );
-    height: 84px !important;
+    // background-image: linear-gradient(to right, #1596DF, #0057FF );
+    background-color: #7cacf0 !important;
+    // height: 84px !important;
     color: white;
-    transition: 1s;
+    transition: 0.8s;
 }
 .styling-button:hover{
     color: #9CDBFF;
 }
+.styling-button1:hover{
+    color: #fff;
+}
 
    .fade-enter-to, .fade-leave {
-transition: 1s;
+transition: 0.8s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
 opacity: 0;
+}
+.v-toolbar__content, .v-toolbar__extension {
+    padding: 0 !important;
 }
